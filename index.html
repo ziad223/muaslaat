@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مواصلات | WASLAT - موقع النقل الذكي</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* ===== FONTS ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #0a1a3a;
+            --primary-light: #1a4a8a;
+            --bg-dark: #060d1a;
+            --bg-card: #0f1f3a;
+            --text-light: #e8edf5;
+            --text-muted: #94a9c9;
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* ===== LIGHT THEME ===== */
+        body.light-theme {
+            background: #f0f4fa;
+            color: #1a1a2e;
+        }
+        body.light-theme .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme #navbar {
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .nav-link {
+            color: rgba(0, 0, 0, 0.6);
+        }
+        body.light-theme .nav-link:hover,
+        body.light-theme .nav-link.active {
+            background: rgba(0, 0, 0, 0.04);
+            color: #000;
+        }
+        body.light-theme .gradient-hero {
+            background: linear-gradient(145deg, #e8edf5 0%, #d0dcee 60%, #b8cae0 100%);
+        }
+        body.light-theme .hero-title .text-white {
+            color: #0a1a3a !important;
+        }
+        body.light-theme .hero-title .text-transparent {
+            background: linear-gradient(to left, #0a1a3a, #1a4a8a) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+        body.light-theme html[dir="ltr"] .hero-title .text-transparent {
+            background: linear-gradient(to right, #0a1a3a, #1a4a8a) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+        body.light-theme .hero-title .hero-line2 {
+            color: #0a1a3a !important;
+        }
+        body.light-theme .hero-title .hero-line1 {
+            -webkit-text-fill-color: transparent !important;
+            color: transparent !important;
+        }
+        body.light-theme .hero-title .text-transparent {
+            -webkit-text-fill-color: transparent !important;
+        }
+        body.light-theme .hero-title .bg-gradient-to-l {
+            background-image: linear-gradient(to left, #0a1a3a, #1a4a8a) !important;
+        }
+        body.light-theme html[dir="ltr"] .hero-title .bg-gradient-to-l {
+            background-image: linear-gradient(to right, #0a1a3a, #1a4a8a) !important;
+        }
+        body.light-theme .hero-desc {
+            color: #2a3a5a !important;
+        }
+        body.light-theme .city-badge {
+            color: #1a4a8a !important;
+            border-color: rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.6);
+        }
+        body.light-theme .section-badge {
+            background: rgba(0, 0, 0, 0.04);
+            color: #1a4a8a !important;
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .stat-number {
+            color: #1a4a8a !important;
+        }
+        body.light-theme .stat-label {
+            color: #4a5a7a !important;
+        }
+        body.light-theme .service-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .service-card:hover {
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+        body.light-theme .text-white {
+            color: #1a1a2e !important;
+        }
+        body.light-theme .text-gray-300 {
+            color: #3a3a5a !important;
+        }
+        body.light-theme .text-gray-400 {
+            color: #5a5a7a !important;
+        }
+        body.light-theme .text-blue-400 {
+            color: #1a4a8a !important;
+        }
+        body.light-theme .text-blue-300 {
+            color: #1a4a8a !important;
+        }
+        body.light-theme .text-blue-200 {
+            color: #2a4a7a !important;
+        }
+        body.light-theme .text-emerald-400 {
+            color: #0d7a5a !important;
+        }
+        body.light-theme .text-amber-400 {
+            color: #b8700a !important;
+        }
+        body.light-theme .text-violet-400 {
+            color: #6a3a8a !important;
+        }
+        body.light-theme .bg-black\/20 {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        body.light-theme .bg-black\/30 {
+            background: rgba(0, 0, 0, 0.02);
+        }
+        body.light-theme .bg-black\/40 {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        body.light-theme .border-white\/10 {
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .border-white\/5 {
+            border-color: rgba(0, 0, 0, 0.04);
+        }
+        body.light-theme .bg-white\/5 {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        body.light-theme .bg-white\/10 {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        body.light-theme .bg-\[\#0a1a3a\] {
+            background: #ffffff;
+        }
+        body.light-theme .bg-\[\#050b16\] {
+            background: #e8edf5;
+        }
+        body.light-theme input,
+        body.light-theme textarea {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.08);
+            color: #1a1a2e;
+        }
+        body.light-theme input::placeholder,
+        body.light-theme textarea::placeholder {
+            color: #8a8aaa;
+        }
+        body.light-theme input:focus,
+        body.light-theme textarea:focus {
+            border-color: #1a4a8a;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        body.light-theme .lang-toggle button {
+            color: rgba(0, 0, 0, 0.4);
+        }
+        body.light-theme .lang-toggle button.active {
+            background: #1a4a8a;
+            color: #fff;
+        }
+        body.light-theme .lang-toggle button:not(.active):hover {
+            color: #000;
+        }
+        body.light-theme .btn-primary {
+            background: #1a4a8a;
+            color: #fff;
+        }
+        body.light-theme .btn-primary:hover {
+            background: #0f2b5f;
+        }
+        body.light-theme .shimmer-btn {
+            background: #1a4a8a !important;
+            color: #fff !important;
+        }
+        body.light-theme .shimmer-btn:hover {
+            background: #0f2b5f !important;
+        }
+        body.light-theme .btn-outline-light {
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #1a1a2e;
+        }
+        body.light-theme .btn-outline-light:hover {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.25);
+        }
+        body.light-theme #mobile-menu {
+            background: rgba(255, 255, 255, 0.98);
+            border-top-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .mobile-link {
+            color: rgba(0, 0, 0, 0.6);
+        }
+        body.light-theme .mobile-link:hover {
+            background: rgba(0, 0, 0, 0.04);
+            color: #000;
+        }
+        body.light-theme .modal-backdrop {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        body.light-theme #register-modal .bg-\[\#0a1a3a\] {
+            background: #ffffff;
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme #register-modal .bg-black\/30 {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        body.light-theme .step-list li::before {
+            color: #1a4a8a;
+        }
+        body.light-theme .text-gray-500 {
+            color: #5a5a7a !important;
+        }
+        body.light-theme .border-t-white\/10 {
+            border-top-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .border-white\/20 {
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+        body.light-theme .bg-white\/5 {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        body.light-theme .text-white\/70 {
+            color: rgba(0, 0, 0, 0.7) !important;
+        }
+        body.light-theme .text-white\/60 {
+            color: rgba(0, 0, 0, 0.6) !important;
+        }
+        body.light-theme .text-white\/50 {
+            color: rgba(0, 0, 0, 0.5) !important;
+        }
+        body.light-theme .text-white\/40 {
+            color: rgba(0, 0, 0, 0.4) !important;
+        }
+        body.light-theme .text-white\/30 {
+            color: rgba(0, 0, 0, 0.3) !important;
+        }
+        body.light-theme .text-white\/20 {
+            color: rgba(0, 0, 0, 0.2) !important;
+        }
+        body.light-theme .text-white {
+            color: #1a1a2e !important;
+        }
+        body.light-theme .text-gray-400 {
+            color: #5a5a7a !important;
+        }
+        body.light-theme .text-gray-300 {
+            color: #3a3a5a !important;
+        }
+        body.light-theme .text-gray-500 {
+            color: #5a5a7a !important;
+        }
+        body.light-theme .text-gray-600 {
+            color: #6a6a8a !important;
+        }
+        body.light-theme .text-gray-700 {
+            color: #4a4a6a !important;
+        }
+        body.light-theme .text-gray-200 {
+            color: #8a8aaa !important;
+        }
+        body.light-theme .border-gray-700 {
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+        body.light-theme .border-gray-600 {
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        body.light-theme .hover\:text-white:hover {
+            color: #1a4a8a !important;
+        }
+        body.light-theme .hover\:text-gray-300:hover {
+            color: #3a3a5a !important;
+        }
+        body.light-theme .hover\:bg-white\/10:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        body.light-theme .from-white\/10 {
+            --tw-gradient-from: rgba(0, 0, 0, 0.04);
+        }
+        body.light-theme .to-white\/5 {
+            --tw-gradient-to: rgba(0, 0, 0, 0.02);
+        }
+        body.light-theme .footer-links a {
+            color: rgba(0, 0, 0, 0.5);
+        }
+        body.light-theme .footer-links a:hover {
+            color: #1a4a8a;
+        }
+        body.light-theme .footer-social a {
+            color: rgba(0, 0, 0, 0.4);
+        }
+        body.light-theme .footer-social a:hover {
+            color: #1a4a8a;
+        }
+        body.light-theme .theme-toggle-btn {
+            border-color: rgba(0, 0, 0, 0.08);
+            color: rgba(0, 0, 0, 0.5);
+        }
+        body.light-theme .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.04);
+            color: #000;
+        }
+        body.light-theme .footer-gradient {
+            background: linear-gradient(180deg, rgba(240, 244, 250, 0.95) 0%, #e8edf5 100%);
+        }
+        body.light-theme .footer-divider {
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06), transparent);
+        }
+
+        /* ===== UTILITY ===== */
+        .section-badge {
+            display: inline-block;
+            padding: 0.35rem 1.2rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #8ab4ff;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 1rem;
+        }
+
+        .glass-card {
+            background: rgba(15, 31, 58, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+            background: var(--primary-light);
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(26, 58, 106, 0.4);
+        }
+        .btn-primary:hover {
+            background: #2a5a8a;
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(26, 58, 106, 0.5);
+        }
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-outline-light {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            transition: all 0.3s;
+        }
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-hero {
+            background: linear-gradient(145deg, #050b16 0%, #0a1a3a 60%, #0f2b5f 100%);
+            transition: background 0.3s;
+        }
+
+        .lang-toggle {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 100px;
+            padding: 0.2rem;
+            display: flex;
+            gap: 0.1rem;
+        }
+        .lang-toggle button {
+            padding: 0.3rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: rgba(255, 255, 255, 0.5);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        .lang-toggle button.active {
+            background: var(--primary-light);
+            color: #fff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+        .lang-toggle button:not(.active):hover {
+            color: #fff;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===== NAVBAR ===== */
+        #navbar {
+            background: rgba(6, 13, 26, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .nav-link {
+            transition: all 0.3s;
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        /* ===== RTL / LTR ===== */
+        html[dir="ltr"] .section-title:after {
+            left: 0;
+            right: auto;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes shimmer {
+            100% {
+                transform: skewX(25deg) translateX(300%);
+            }
+        }
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right, transparent 20%, rgba(255, 255, 255, 0.15) 50%, transparent 80%);
+            transform: skewX(25deg);
+            animation: shimmer 2.8s infinite;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+        .float-anim {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 10px;
+        }
+
+        /* ===== INPUTS ===== */
+        input,
+        textarea,
+        select {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+            transition: all 0.3s;
+        }
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary-light);
+            outline: none;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ===== MOBILE MENU ===== */
+        #mobile-menu {
+            background: rgba(6, 13, 26, 0.98);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .mobile-link {
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s;
+            border-radius: 12px;
+        }
+        .mobile-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+            .glass-card {
+                padding: 1.5rem !important;
+            }
+        }
+
+        /* ===== SERVICE CARDS ===== */
+        .service-card {
+            background: rgba(15, 31, 58, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-list li {
+            position: relative;
+            padding-right: 1.8rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        .step-list li::before {
+            content: attr(data-step);
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #4a8af4;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        html[dir="ltr"] .step-list li {
+            padding-right: 0;
+            padding-left: 1.8rem;
+        }
+        html[dir="ltr"] .step-list li::before {
+            right: auto;
+            left: 0;
+        }
+
+        /* ===== THEME TOGGLE ===== */
+        .theme-toggle-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.3rem;
+        }
+        .theme-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-gradient {
+            background: linear-gradient(180deg, rgba(6, 13, 26, 0.95) 0%, #060d1a 100%);
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .footer-social a:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .footer-divider {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            height: 1px;
+        }
+
+        /* LTR fix for hero */
+        html[dir="ltr"] .hero-title .text-transparent {
+            background: linear-gradient(to right, #fff, #8ab4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.light-theme html[dir="ltr"] .hero-title .text-transparent {
+            background: linear-gradient(to right, #0a1a3a, #1a4a8a) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+        html[dir="ltr"] .hero-title .text-white {
+            color: #fff !important;
+        }
+        body.light-theme html[dir="ltr"] .hero-title .text-white {
+            color: #0a1a3a !important;
+        }
+
+        /* ===== FIX: Make sure hero text shows in light theme ===== */
+        body.light-theme .hero-title .text-transparent {
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+        body.light-theme .hero-title .hero-line1 {
+            -webkit-text-fill-color: transparent !important;
+            color: transparent !important;
+        }
+        body.light-theme .hero-title .hero-line2 {
+            color: #0a1a3a !important;
+            -webkit-text-fill-color: #0a1a3a !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- NAVBAR -->
+    <!-- ============================================================ -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 bg-[#1a4a8a] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-900/30">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="white" />
+                            <circle cx="12" cy="9" r="3" fill="#1a4a8a" />
+                            <path d="M12 6.5V11.5" stroke="#1a4a8a" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tighter text-white brand-text">مواصلات</span>
+                    <span class="hidden md:inline text-[10px] font-bold tracking-[2px] text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">v2.0</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-1 text-sm font-medium">
+                    <a href="#home" class="nav-link active">الرئيسية</a>
+                    <a href="#about" class="nav-link">من نحن</a>
+                    <a href="#services" class="nav-link">خدماتنا</a>
+                    <a href="#how-to-ride" class="nav-link">كيف تستخدم</a>
+                    <a href="#privacy" class="nav-link">الخصوصية</a>
+                    <a href="#contact" class="nav-link">اتصل بنا</a>
+                </div>
+
+                <!-- Right actions -->
+                <div class="flex items-center gap-3">
+
+                    <!-- Language Toggle -->
+                    <div class="lang-toggle hidden sm:flex">
+                        <button id="lang-ar" class="active" data-lang="ar">عربي</button>
+                        <button id="lang-en" data-lang="en">EN</button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Register Btn -->
+                    <button onclick="showRegisterModal()"
+                    class="hidden md:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-[#1a4a8a] text-white rounded-2xl hover:bg-[#2a5a9a] transition-all shadow-lg shadow-blue-900/20">
+                    <i class="fa-regular fa-building"></i>
+                    <span>تسجيل المؤسسة</span>
+                </button>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-2xl hover:bg-white/5 border border-white/10">
+                    <i class="fa-solid fa-bars text-xl text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+        <div class="px-6 py-6 flex flex-col gap-1 text-sm">
+            <a href="#home" class="mobile-link px-4 py-3">الرئيسية</a>
+            <a href="#about" class="mobile-link px-4 py-3">من نحن</a>
+            <a href="#services" class="mobile-link px-4 py-3">خدماتنا</a>
+            <a href="#how-to-ride" class="mobile-link px-4 py-3">كيف تستخدم</a>
+            <a href="#privacy" class="mobile-link px-4 py-3">سياسة الخصوصية</a>
+            <a href="#contact" class="mobile-link px-4 py-3">اتصل بنا</a>
+            <div class="pt-4 border-t border-white/10 mt-2">
+                <button onclick="showRegisterModal(); document.getElementById('mobile-menu').classList.add('hidden')"
+                class="w-full flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold bg-[#1a4a8a] text-white rounded-2xl">
+                <i class="fa-regular fa-building"></i>
+                <span>تسجيل المؤسسة</span>
+            </button>
+        </div>
+        <div class="flex items-center justify-center gap-3 mt-4">
+            <button id="mobile-lang-ar" class="text-sm font-semibold text-white">عربي</button>
+            <span class="text-gray-600">|</span>
+            <button id="mobile-lang-en" class="text-sm text-gray-400">EN</button>
+        </div>
+    </div>
+</div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- HERO -->
+<!-- ============================================================ -->
+<section id="home" class="gradient-hero text-white pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl"></div>
+
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+            <!-- Text -->
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-widest text-blue-300 city-badge">متوفر في 15+ مدينة</span>
+                </div>
+
+                <h1 class="hero-title text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-l from-white to-blue-300 hero-line1">Smart Mobility</span><br />
+                    <span class="text-white hero-line2">With a Modern Touch</span>
+                </h1>
+
+                <p class="max-w-lg text-lg text-blue-200/80 leading-relaxed hero-desc">
+                    WASLAT — the smart transport app designed to give you fast and safe rides with flexible subscription options.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#" class="relative overflow-hidden inline-flex items-center gap-3 bg-white text-[#0a1a3a] hover:bg-gray-100 font-bold px-8 h-14 rounded-3xl text-base shadow-xl shadow-black/30 active:scale-[0.97] transition-all shimmer-btn">
+                        <i class="fa-brands fa-google-play text-2xl"></i>
+                        <div class="text-left leading-none">
+                            <div class="text-[9px] font-medium tracking-wider opacity-60">GET IT ON</div>
+                            <div class="font-bold -mt-0.5">Google Play</div>
+                        </div>
+                    </a>
+                    <a href="#" class="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/15 backdrop-blur-md font-semibold px-8 h-14 rounded-3xl text-base active:scale-[0.97] transition-all">
+                        <i class="fa-brands fa-apple text-3xl"></i>
+                        <div class="text-left leading-none">
+                            <div class="text-[9px] font-medium tracking-wider opacity-60">Download on</div>
+                            <div class="font-bold -mt-0.5">App Store</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Social proof -->
+                <div class="flex items-center gap-6 pt-4">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full ring-2 ring-white/30 overflow-hidden"><img src="https://i.pravatar.cc/40?img=28" class="w-full h-full object-cover" alt="user" /></div>
+                        <div class="w-10 h-10 rounded-full ring-2 ring-white/30 overflow-hidden"><img src="https://i.pravatar.cc/40?img=32" class="w-full h-full object-cover" alt="user" /></div>
+                        <div class="w-10 h-10 rounded-full ring-2 ring-white/30 overflow-hidden"><img src="https://i.pravatar.cc/40?img=47" class="w-full h-full object-cover" alt="user" /></div>
+                        <div class="w-10 h-10 rounded-full ring-2 ring-white/30 bg-white/10 flex items-center justify-center text-xs font-bold">+80k</div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-lg users-count">85,000+</div>
+                        <div class="text-sm text-blue-300 users-label">Active Users</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="lg:col-span-5 relative">
+                <div class="glass-card rounded-3xl p-3 shadow-2xl float-anim">
+                    <div class="rounded-2xl overflow-hidden bg-white/5">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&h=450&fit=crop&crop=center&auto=format"
+                        alt="WASLAT app preview" class="w-full h-auto" />
+                        <div class="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl border border-white/10 flex items-center gap-3">
+                            <i class="fa-regular fa-clock text-blue-400 text-xl"></i>
+                            <div>
+                                <div class="text-[10px] font-bold tracking-widest text-emerald-400">Available Now</div>
+                                <div class="font-bold text-white text-sm">Your ride in 2 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STATS BAR -->
+<!-- ============================================================ -->
+<div class="border-b border-white/5 bg-black/30 backdrop-blur-sm">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl lg:text-4xl font-extrabold text-blue-400 stat-number stat-val1">15+</div>
+                <div class="text-sm text-gray-400 stat-label1">Cities</div>
+            </div>
+            <div>
+                <div class="text-3xl lg:text-4xl font-extrabold text-blue-400 stat-number stat-val2">85,000+</div>
+                <div class="text-sm text-gray-400 stat-label2">Users</div>
+            </div>
+            <div>
+                <div class="text-3xl lg:text-4xl font-extrabold text-blue-400 stat-number stat-val3">4.9</div>
+                <div class="text-sm text-gray-400 stat-label3">Rating</div>
+            </div>
+            <div>
+                <div class="text-3xl lg:text-4xl font-extrabold text-blue-400 stat-number stat-val4">240k+</div>
+                <div class="text-sm text-gray-400 stat-label4">Completed Rides</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ABOUT -->
+<!-- ============================================================ -->
+<section id="about" class="py-20 lg:py-28">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <span class="section-badge about-badge">About Us</span>
+                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] about-title">
+                    Building a bridge <br class="hidden lg:block" />between you and <span class="text-blue-400">the city</span>
+                </h2>
+                <p class="mt-6 text-lg text-gray-300 leading-relaxed about-sub">
+                    WASLAT is more than just a transport app; it's your daily partner in smart mobility.
+                </p>
+                <div class="mt-10 flex items-center gap-4">
+                    <div class="flex -space-x-3">
+                        <div class="w-12 h-12 rounded-full ring-4 ring-[#0a1a3a] overflow-hidden border border-white/10"><img src="https://i.pravatar.cc/48?img=15" alt="" /></div>
+                        <div class="w-12 h-12 rounded-full ring-4 ring-[#0a1a3a] overflow-hidden border border-white/10"><img src="https://i.pravatar.cc/48?img=25" alt="" /></div>
+                        <div class="w-12 h-12 rounded-full ring-4 ring-[#0a1a3a] overflow-hidden border border-white/10"><img src="https://i.pravatar.cc/48?img=40" alt="" /></div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-white">WASLAT Team</div>
+                        <div class="text-sm text-gray-400">120+ employees</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6 text-gray-300 leading-relaxed text-[16px]">
+                <p class="about-p1">
+                    <strong class="text-blue-400">WASLAT</strong> is a smart transport app that connects passengers with verified drivers to provide fast and safe city travel. We offer a modern experience that combines easy ride booking with flexible monthly subscription options.
+                </p>
+                <p class="about-p2">
+                    Our goal is to make daily mobility easier and more reliable using modern technology and providing high-quality service for everyone. We believe every ride should be an enjoyable and safe experience.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <span class="inline-block px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold text-gray-300 border border-white/5"><i class="fa-regular fa-circle-check text-emerald-400 ml-1"></i> <span class="tag1">Verified drivers</span></span>
+                    <span class="inline-block px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold text-gray-300 border border-white/5"><i class="fa-regular fa-circle-check text-emerald-400 ml-1"></i> <span class="tag2">24/7 Support</span></span>
+                    <span class="inline-block px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold text-gray-300 border border-white/5"><i class="fa-regular fa-circle-check text-emerald-400 ml-1"></i> <span class="tag3">Transparent pricing</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SERVICES SECTION -->
+<!-- ============================================================ -->
+<section id="services" class="py-20 lg:py-28 border-y border-white/5 bg-black/20">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        <div class="text-center mb-16">
+            <span class="section-badge services-badge">Our Services</span>
+            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white services-title">Transport &amp; Delivery Services</h2>
+            <p class="mt-3 text-gray-400 max-w-2xl mx-auto services-sub">Towards easier mobility</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Service 1: Ride Hailing -->
+            <div class="service-card rounded-3xl p-8">
+                <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 srv-title1">Ride Hailing</h3>
+                <p class="text-gray-400 text-sm leading-relaxed srv-desc1">Book your ride easily with trusted drivers and fast arrival.</p>
+                <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
+                    <li data-step="1" class="srv-step1-1">Open WASLAT app</li>
+                    <li data-step="2" class="srv-step1-2">Set your pickup location</li>
+                    <li data-step="3" class="srv-step1-3">Choose your destination</li>
+                    <li data-step="4" class="srv-step1-4">Review ride details</li>
+                    <li data-step="5" class="srv-step1-5">Confirm the ride</li>
+                    <li data-step="6" class="srv-step1-6">Track your ride live</li>
+                    <li data-step="7" class="srv-step1-7">Arrive safely</li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Fast &amp; easy</span>
+                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Live tracking</span>
+                </div>
+            </div>
+
+            <!-- Service 2: Delivery -->
+            <div class="service-card rounded-3xl p-8">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 srv-title2">Delivery Service</h3>
+                <p class="text-gray-400 text-sm leading-relaxed srv-desc2">Send your order easily with qualified couriers.</p>
+                <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
+                    <li data-step="1" class="srv-step2-1">Open WASLAT app</li>
+                    <li data-step="2" class="srv-step2-2">Select "Delivery"</li>
+                    <li data-step="3" class="srv-step2-3">Set pickup location</li>
+                    <li data-step="4" class="srv-step2-4">Enter order details</li>
+                    <li data-step="5" class="srv-step2-5">Set delivery location</li>
+                    <li data-step="6" class="srv-step2-6">Review details</li>
+                    <li data-step="7" class="srv-step2-7">Confirm order</li>
+                    <li data-step="8" class="srv-step2-8">Track courier</li>
+                    <li data-step="9" class="srv-step2-9">Receive order</li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Fast delivery</span>
+                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> City-wide coverage</span>
+                </div>
+                <div class="mt-3 text-xs text-gray-500 border-t border-white/5 pt-3">
+                    <i class="fa-regular fa-money-bill-1 text-amber-400 ml-1"></i> <span class="payment-method">Cash on delivery</span>
+                </div>
+            </div>
+
+            <!-- Service 3: Shuttle -->
+            <div class="service-card rounded-3xl p-8">
+                <div class="w-14 h-14 bg-violet-500/10 text-violet-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
+                    <i class="fa-solid fa-bus"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 srv-title3">Shuttle Service</h3>
+                <p class="text-gray-400 text-sm leading-relaxed srv-desc3">Pre-scheduled rides with fixed routes and designated pickup points.</p>
+                <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
+                    <li data-step="1" class="srv-step3-1">Open WASLAT app</li>
+                    <li data-step="2" class="srv-step3-2">Select "Shuttle"</li>
+                    <li data-step="3" class="srv-step3-3">Set your current location</li>
+                    <li data-step="4" class="srv-step3-4">Browse available rides</li>
+                    <li data-step="5" class="srv-step3-5">Choose the right ride</li>
+                    <li data-step="6" class="srv-step3-6">Select booking type</li>
+                    <li data-step="7" class="srv-step3-7">View ride details</li>
+                    <li data-step="8" class="srv-step3-8">Complete payment</li>
+                    <li data-step="9" class="srv-step3-9">Get your ticket</li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Regular schedules</span>
+                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> E-tickets</span>
+                </div>
+                <div class="mt-3 text-xs text-amber-400/70 border-t border-white/5 pt-3">
+                    <i class="fa-regular fa-clock ml-1"></i> <span class="shuttle-note">Be there 10 min before departure</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- HOW TO USE -->
+<!-- ============================================================ -->
+<section id="how-to-ride" class="py-20 lg:py-28">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        <div class="text-center mb-16">
+            <span class="section-badge how-badge">How to use</span>
+            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white how-title">Book your ride easily</h2>
+            <p class="mt-3 text-gray-400 how-sub">Simple steps to get your ride</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
+                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">1</div>
+                <h4 class="font-bold text-white text-lg mb-2 how-step1-title">Open WASLAT app</h4>
+                <p class="text-sm text-gray-400 how-step1-desc">Login or create a new account.</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
+                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">2</div>
+                <h4 class="font-bold text-white text-lg mb-2 how-step2-title">Set your pickup location</h4>
+                <p class="text-sm text-gray-400 how-step2-desc">Your location will be detected automatically or manually.</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
+                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">3</div>
+                <h4 class="font-bold text-white text-lg mb-2 how-step3-title">Choose your destination</h4>
+                <p class="text-sm text-gray-400 how-step3-desc">Select the location you want to reach.</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
+                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">4</div>
+                <h4 class="font-bold text-white text-lg mb-2 how-step4-title">Confirm the ride</h4>
+                <p class="text-sm text-gray-400 how-step4-desc">Press "Request Ride" and the request will be sent to the nearest driver.</p>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <span class="inline-block px-6 py-2 bg-white/5 rounded-full text-sm text-gray-400 border border-white/5">
+                <i class="fa-regular fa-circle-check text-emerald-400 ml-2"></i> <span class="how-note">Track your ride live and enjoy a safe ride</span>
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PRIVACY & TERMS -->
+<!-- ============================================================ -->
+<section id="privacy" class="py-16 border-y border-white/5 bg-black/20">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white privacy-title">Privacy Policy</h3>
+                        <p class="text-xs text-gray-500 privacy-date">Last updated: January 2026</p>
+                    </div>
+                </div>
+                <div class="text-gray-300 text-sm space-y-3 leading-relaxed">
+                    <p class="privacy-p1">By using the WASLAT app, you agree to use the service in a legal and responsible manner. The app allows users to book rides or subscribe to available plans according to the chosen package.</p>
+                    <p class="privacy-p2">We use the latest encryption technologies to protect your personal data and ride information. We do not share your data with any third party without your explicit consent.</p>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white terms-title">Terms &amp; Conditions</h3>
+                        <p class="text-xs text-gray-500 terms-date">Effective from registration date</p>
+                    </div>
+                </div>
+                <div class="text-gray-300 text-sm space-y-3 leading-relaxed">
+                    <p class="terms-p1">Prices and driver availability may vary based on location and time, and the app management reserves the right to update services or terms to improve quality and user experience.</p>
+                    <ul class="list-disc pr-5 space-y-1">
+                        <li class="terms-li1">Provide accurate and updated information when registering</li>
+                        <li class="terms-li2">Follow safety rules during the ride</li>
+                        <li class="terms-li3">Do not use the app for illegal purposes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT -->
+<!-- ============================================================ -->
+<section id="contact" class="py-20 lg:py-28 bg-[#050b16]">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <span class="inline-block text-blue-400 text-sm font-bold tracking-[2px] contact-badge">Contact Us</span>
+                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight mt-3 leading-[1.1] text-white contact-title">We are here <br class="hidden lg:block" />for you</h2>
+                <p class="mt-4 text-gray-400 max-w-md contact-sub">Our support team is ready to respond to your inquiries within minutes.</p>
+                <div class="mt-8 space-y-4 text-sm text-gray-300">
+                    <div class="flex items-center gap-4"><i class="fa-solid fa-phone text-blue-400 w-5"></i> <span class="contact-phone">012 345 6789</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-regular fa-envelope text-blue-400 w-5"></i> <span class="contact-email">support@waslat.com</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-solid fa-location-dot text-blue-400 w-5"></i> <span class="contact-location">Riyadh, Saudi Arabia</span></div>
+                </div>
+                <div class="mt-8 flex gap-4 text-xl text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="glass-card rounded-3xl p-8 border border-white/5 shadow-2xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-name">Full Name</label>
+                                <input type="text" id="name" required placeholder="Enter your name"
+                                class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-phone">Phone Number</label>
+                                <input type="tel" id="phone" required placeholder="05xxxxxxxx"
+                                class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-email">Email Address</label>
+                            <input type="email" id="email" required placeholder="example@email.com"
+                            class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-msg">Message</label>
+                            <textarea id="message" rows="4" required placeholder="Write your message here..."
+                            class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500 resize-y"></textarea>
+                        </div>
+                        <button type="submit"
+                        class="w-full btn-primary py-4 rounded-2xl font-bold flex items-center justify-center gap-3 text-base">
+                        <span class="contact-btn-text">Send Message</span>
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER - FULLY TRANSLATED -->
+<!-- ============================================================ -->
+<footer class="footer-gradient border-t border-white/5">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16">
+            <!-- Brand -->
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-[#1a4a8a] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-900/20">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="white" />
+                            <circle cx="12" cy="9" r="3" fill="#1a4a8a" />
+                            <path d="M12 6.5V11.5" stroke="#1a4a8a" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <span class="text-xl font-extrabold text-white footer-brand">WASLAT</span>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xs footer-brand-desc">
+                    The smart transport app designed to give you fast and safe rides with flexible subscription options.
+                </p>
+                <div class="flex gap-3 mt-4 footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube text-sm"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-sm font-bold text-white/70 uppercase tracking-wider mb-4 footer-quick-title">روابط سريعة</h4>
+                <ul class="space-y-2.5 text-sm footer-links">
+                    <li><a href="#home" class="footer-link-home">الرئيسية</a></li>
+                    <li><a href="#about" class="footer-link-about">من نحن</a></li>
+                    <li><a href="#services" class="footer-link-services">خدماتنا</a></li>
+                    <li><a href="#how-to-ride" class="footer-link-how">كيف تستخدم</a></li>
+                    <li><a href="#contact" class="footer-link-contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-sm font-bold text-white/70 uppercase tracking-wider mb-4 footer-services-title">خدماتنا</h4>
+                <ul class="space-y-2.5 text-sm footer-links">
+                    <li><a href="#services" class="footer-service-ride">طلب رحلة</a></li>
+                    <li><a href="#services" class="footer-service-delivery">توصيل الطلبات</a></li>
+                    <li><a href="#services" class="footer-service-shuttle">النقل الترددي</a></li>
+                    <li><a href="#services" class="footer-service-subscription">اشتراكات شهرية</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-sm font-bold text-white/70 uppercase tracking-wider mb-4 footer-contact-title">معلومات الاتصال</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-blue-400 mt-1 w-4"></i>
+                        <span class="footer-location">الرياض، المملكة العربية السعودية</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone text-blue-400 mt-1 w-4"></i>
+                        <span class="footer-phone">012 345 6789</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-regular fa-envelope text-blue-400 mt-1 w-4"></i>
+                        <span class="footer-email">support@waslat.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-regular fa-clock text-blue-400 mt-1 w-4"></i>
+                        <span class="footer-support">دعم 24/7</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Bottom Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 py-6 text-sm">
+            <div class="flex items-center gap-4 text-gray-500">
+                <span class="footer-copy">© 2026 WASLAT</span>
+                <span class="hidden md:inline">•</span>
+                <span class="footer-rights">جميع الحقوق محفوظة</span>
+            </div>
+            <div class="flex items-center gap-6 text-sm footer-links">
+                <a href="#privacy" class="footer-privacy">سياسة الخصوصية</a>
+                <a href="#privacy" class="footer-terms">الأحكام والشروط</a>
+                <span class="text-[10px] px-3 py-1 bg-white/5 rounded-full border border-white/5 text-gray-400">
+                    <i class="fa-solid fa-heart text-emerald-400 ml-1"></i> <span class="footer-made">صنع في السعودية</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- REGISTER MODAL -->
+<!-- ============================================================ -->
+<div id="register-modal" onclick="if(event.target.id==='register-modal') hideRegisterModal()"
+class="hidden fixed inset-0 modal-backdrop z-[100] flex items-center justify-center p-6">
+<div onclick="event.stopPropagation()"
+class="bg-[#0a1a3a] w-full max-w-md rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+<div class="px-8 pt-8 pb-6">
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="text-2xl font-extrabold text-white modal-title">تسجيل المؤسسة</h3>
+            <p class="text-sm text-gray-400 modal-sub">انضم كشريك أعمال</p>
+        </div>
+        <button onclick="hideRegisterModal()" class="text-gray-400 hover:text-white text-3xl leading-none">×</button>
+    </div>
+    <form id="register-form" class="mt-8 space-y-5">
+        <div>
+            <label class="text-xs font-bold tracking-wider text-gray-400 modal-label-org">اسم المؤسسة</label>
+            <input type="text" required placeholder="مثال: شركة النقل الحديث"
+            class="mt-1.5 w-full rounded-2xl px-5 py-3 text-sm text-white placeholder:text-gray-500" />
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <label class="text-xs font-bold tracking-wider text-gray-400 modal-label-manager">اسم المسؤول</label>
+                <input type="text" required placeholder="أحمد محمد"
+                class="mt-1.5 w-full rounded-2xl px-5 py-3 text-sm text-white placeholder:text-gray-500" />
+            </div>
+            <div>
+                <label class="text-xs font-bold tracking-wider text-gray-400 modal-label-phone">رقم الجوال</label>
+                <input type="tel" required placeholder="05xxxxxxxx"
+                class="mt-1.5 w-full rounded-2xl px-5 py-3 text-sm text-white placeholder:text-gray-500" />
+            </div>
+        </div>
+        <div>
+            <label class="text-xs font-bold tracking-wider text-gray-400 modal-label-email">البريد الإلكتروني</label>
+            <input type="email" required placeholder="info@company.com"
+            class="mt-1.5 w-full rounded-2xl px-5 py-3 text-sm text-white placeholder:text-gray-500" />
+        </div>
+        <button type="submit" class="w-full btn-primary py-4 rounded-2xl font-bold flex items-center justify-center gap-2">
+            <span class="modal-btn-text">إرسال طلب التسجيل</span>
+        </button>
+    </form>
+</div>
+<div class="bg-black/30 px-8 py-4 text-center text-xs text-gray-500 modal-footer">
+    سيتم مراجعة طلبك خلال 48 ساعة
+</div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOAST -->
+<!-- ============================================================ -->
+<div id="success-toast" class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-3 z-[200]">
+    <i class="fa-regular fa-circle-check text-xl"></i>
+    <span class="font-medium toast-msg">Message sent successfully! We will contact you soon.</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- JAVASCRIPT -->
+<!-- ============================================================ -->
+<script>
+    (function() {
+        'use strict';
+
+        // ========== THEME ==========
+        let currentTheme = 'dark';
+
+        function setTheme(theme) {
+            currentTheme = theme;
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                icon.className = 'fa-solid fa-moon';
+            } else {
+                body.classList.remove('light-theme');
+                icon.className = 'fa-solid fa-sun';
+            }
+            localStorage.theme = theme;
+        }
+
+        function toggleTheme() {
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        }
+
+        document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+
+        const savedTheme = localStorage.theme || 'dark';
+        setTheme(savedTheme);
+
+        // ========== TRANSLATION ==========
+        const translations = {
+            ar: {
+                nav: ['الرئيسية', 'من نحن', 'خدماتنا', 'كيف تستخدم', 'الخصوصية', 'اتصل بنا'],
+                hero: ['متوفر في 15+ مدينة', 'تنقل ذكي', 'بلمسة عصرية',
+                    'مواصلات — تطبيق النقل الذكي المصمم ليمنحك رحلات سريعة وآمنة مع خيارات اشتراك مرنة.'
+                ],
+                stats: ['مدينة', 'مستخدم', 'تقييم', 'رحلة مكتملة'],
+                about: ['من نحن', 'نبني جسراً', 'بينك وبين', 'المدينة',
+                    'مواصلات هو أكثر من مجرد تطبيق نقل؛ إنه شريكك اليومي في التنقل الذكي.',
+                    'مواصلات هو تطبيق نقل ذكي يربط بين الركاب والسائقين المعتمدين لتوفير تنقل سريع وآمن داخل المدينة. نقدم تجربة حديثة تجمع بين سهولة حجز الرحلات وخيارات الاشتراك الشهري المرنة.',
+                    'هدفنا هو جعل التنقل اليومي أكثر سهولة وموثوقية باستخدام التكنولوجيا الحديثة وتقديم خدمة عالية الجودة للجميع. نؤمن بأن كل رحلة يجب أن تكون تجربة ممتعة وآمنة.'
+                ],
+                tags: ['سائقون موثوقون', 'دعم 24/7', 'أسعار شفافة'],
+                services: ['خدماتنا', 'خدمات النقل والتنقل والتوصيل', 'نحو تنقل أكثر سهولة'],
+                srv1: ['طلب رحلة', 'احجز رحلتك بسهولة مع سائقين موثوقين ووصول سريع.',
+                    'افتح تطبيق مواصلات', 'حدد موقع الانطلاق', 'اختر وجهتك', 'استعرض تفاصيل الرحلة',
+                    'أكد الطلب', 'تتبع الرحلة مباشرة', 'الوصول بأمان'
+                ],
+                srv2: ['توصيل الطلبات', 'أرسل طلبك بكل سهولة مع مندوبين مؤهلين.',
+                    'افتح تطبيق مواصلات', 'اختر "توصيل الطلبات"', 'حدد موقع الاستلام', 'أدخل بيانات الطلب',
+                    'حدد موقع التسليم', 'مراجعة التفاصيل', 'تأكيد الطلب', 'متابعة المندوب', 'استلام الطلب',
+                    'الدفع النقدي (كاش) عند الاستلام'
+                ],
+                srv3: ['النقل الترددي', 'رحلات مجدولة مسبقاً بمسارات ثابتة ونقاط تجمع محددة.',
+                    'افتح تطبيق مواصلات', 'اختر "النقل الترددي"', 'حدد موقعك الحالي', 'استعرض الرحلات المتاحة',
+                    'اختر الرحلة المناسبة', 'حدد نوع الحجز', 'اطلع على التفاصيل', 'أكمل الدفع', 'استلم تذكرتك',
+                    'التواجد قبل الرحلة بـ 10 دقائق'
+                ],
+                how: ['طريقة الاستخدام', 'اطلب رحلتك بكل سهولة', 'خطوات بسيطة للحصول على رحلتك',
+                    'افتح تطبيق مواصلات', 'قم بتسجيل الدخول أو إنشاء حساب جديد.',
+                    'حدد موقع الانطلاق', 'سيتم تحديد موقعك تلقائياً أو يدوياً.',
+                    'اختر وجهتك', 'حدد الموقع الذي ترغب بالوصول إليه.',
+                    'أكد الطلب', 'اضغط "طلب رحلة" وسيتم توجيه الطلب لأقرب سائق.',
+                    'تتبع رحلتك مباشرة واستمتع برحلة آمنة'
+                ],
+                privacy: ['سياسة الخصوصية', 'آخر تحديث: يناير 2026',
+                    'باستخدامك لتطبيق مواصلات فإنك توافق على استخدام الخدمة بطريقة قانونية ومسؤولة. يتيح التطبيق للمستخدمين حجز الرحلات أو الاشتراك في الباقات المتاحة حسب الخطة المختارة.',
+                    'نحن نستخدم أحدث تقنيات التشفير لحماية بياناتك الشخصية ومعلومات رحلاتك. لا نشارك بياناتك مع أي طرف ثالث إلا بموافقتك الصريحة.'
+                ],
+                terms: ['الأحكام والشروط', 'سارية من تاريخ التسجيل',
+                    'قد تختلف الأسعار وتوفر السائقين حسب الموقع والوقت، ويحق لإدارة التطبيق تحديث الخدمات أو الشروط بهدف تحسين الجودة.',
+                    'تقديم معلومات صحيحة ومحدثة عند التسجيل', 'الالتزام بقواعد السلامة أثناء الرحلة',
+                    'عدم استخدام التطبيق لأغراض غير قانونية'
+                ],
+                contact: ['تواصل معنا', 'نحن هنا', 'لخدمتك', 'فريق الدعم لدينا جاهز للرد على استفساراتك خلال دقائق.',
+                    'الاسم الكامل', 'رقم الجوال', 'البريد الإلكتروني', 'الرسالة', 'إرسال الرسالة'
+                ],
+                footer: {
+                    brand: 'WASLAT',
+                    brandDesc: 'تطبيق النقل الذكي المصمم ليمنحك رحلات سريعة وآمنة مع خيارات اشتراك مرنة.',
+                    quickTitle: 'روابط سريعة',
+                    quickLinks: ['الرئيسية', 'من نحن', 'خدماتنا', 'كيف تستخدم', 'اتصل بنا'],
+                    servicesTitle: 'خدماتنا',
+                    services: ['طلب رحلة', 'توصيل الطلبات', 'النقل الترددي', 'اشتراكات شهرية'],
+                    contactTitle: 'معلومات الاتصال',
+                    location: 'الرياض، المملكة العربية السعودية',
+                    phone: '012 345 6789',
+                    email: 'support@waslat.com',
+                    support: 'دعم 24/7',
+                    rights: 'جميع الحقوق محفوظة',
+                    privacy: 'سياسة الخصوصية',
+                    terms: 'الأحكام والشروط',
+                    made: 'صنع في السعودية'
+                },
+                modal: ['تسجيل المؤسسة', 'انضم كشريك أعمال', 'اسم المؤسسة', 'اسم المسؤول', 'رقم الجوال',
+                    'البريد الإلكتروني', 'إرسال طلب التسجيل', 'سيتم مراجعة طلبك خلال 48 ساعة'
+                ],
+                toast: 'تم الإرسال بنجاح! سنتواصل معك قريباً.'
+            },
+            en: {
+                nav: ['Home', 'About', 'Services', 'How to use', 'Privacy', 'Contact'],
+                hero: ['Available in 15+ cities', 'Smart Mobility', 'With a Modern Touch',
+                    'WASLAT — the smart transport app designed to give you fast and safe rides with flexible subscription options.'
+                ],
+                stats: ['Cities', 'Users', 'Rating', 'Completed Rides'],
+                about: ['About Us', 'Building a bridge', 'between you and', 'the city',
+                    'WASLAT is more than just a transport app; it\'s your daily partner in smart mobility.',
+                    'WASLAT is a smart transport app that connects passengers with verified drivers to provide fast and safe city travel. We offer a modern experience that combines easy ride booking with flexible monthly subscription options.',
+                    'Our goal is to make daily mobility easier and more reliable using modern technology and providing high-quality service for everyone. We believe every ride should be an enjoyable and safe experience.'
+                ],
+                tags: ['Verified drivers', '24/7 Support', 'Transparent pricing'],
+                services: ['Our Services', 'Transport & Delivery Services', 'Towards easier mobility'],
+                srv1: ['Ride Hailing', 'Book your ride easily with trusted drivers and fast arrival.',
+                    'Open WASLAT app', 'Set your pickup location', 'Choose your destination',
+                    'Review ride details', 'Confirm the ride', 'Track your ride live', 'Arrive safely'
+                ],
+                srv2: ['Delivery Service', 'Send your order easily with qualified couriers.',
+                    'Open WASLAT app', 'Select "Delivery"', 'Set pickup location', 'Enter order details',
+                    'Set delivery location', 'Review details', 'Confirm order', 'Track courier',
+                    'Receive order', 'Cash on delivery'
+                ],
+                srv3: ['Shuttle Service', 'Pre-scheduled rides with fixed routes and designated pickup points.',
+                    'Open WASLAT app', 'Select "Shuttle"', 'Set your current location',
+                    'Browse available rides', 'Choose the right ride', 'Select booking type',
+                    'View ride details', 'Complete payment', 'Get your ticket',
+                    'Be there 10 minutes before departure'
+                ],
+                how: ['How to use', 'Book your ride easily', 'Simple steps to get your ride',
+                    'Open WASLAT app', 'Login or create a new account.',
+                    'Set your pickup location', 'Your location will be detected automatically or manually.',
+                    'Choose your destination', 'Select the location you want to reach.',
+                    'Confirm the ride', 'Press "Request Ride" and the request will be sent to the nearest driver.',
+                    'Track your ride live and enjoy a safe ride'
+                ],
+                privacy: ['Privacy Policy', 'Last updated: January 2026',
+                    'By using the WASLAT app, you agree to use the service in a legal and responsible manner. The app allows users to book rides or subscribe to available plans according to the chosen package.',
+                    'We use the latest encryption technologies to protect your personal data and ride information. We do not share your data with any third party without your explicit consent.'
+                ],
+                terms: ['Terms & Conditions', 'Effective from registration date',
+                    'Prices and driver availability may vary based on location and time, and the app management reserves the right to update services or terms to improve quality and user experience.',
+                    'Provide accurate and updated information when registering', 'Follow safety rules during the ride',
+                    'Do not use the app for illegal purposes'
+                ],
+                contact: ['Contact Us', 'We are here', 'for you',
+                    'Our support team is ready to respond to your inquiries within minutes.',
+                    'Full Name', 'Phone Number', 'Email Address', 'Message', 'Send Message'
+                ],
+                footer: {
+                    brand: 'WASLAT',
+                    brandDesc: 'The smart transport app designed to give you fast and safe rides with flexible subscription options.',
+                    quickTitle: 'Quick Links',
+                    quickLinks: ['Home', 'About', 'Services', 'How to use', 'Contact'],
+                    servicesTitle: 'Our Services',
+                    services: ['Ride Hailing', 'Delivery Service', 'Shuttle Service', 'Monthly Subscriptions'],
+                    contactTitle: 'Contact Info',
+                    location: 'Riyadh, Saudi Arabia',
+                    phone: '012 345 6789',
+                    email: 'support@waslat.com',
+                    support: '24/7 Support',
+                    rights: 'All rights reserved',
+                    privacy: 'Privacy Policy',
+                    terms: 'Terms & Conditions',
+                    made: 'Made in Saudi'
+                },
+                modal: ['Register Organization', 'Join as a business partner', 'Organization Name',
+                    'Manager Name', 'Phone Number', 'Email Address', 'Submit Registration',
+                    'Your request will be reviewed within 48 hours'
+                ],
+                toast: 'Message sent successfully! We will contact you soon.'
+            }
+        };
+
+        // ========== LANGUAGE STATE ==========
+        let currentLang = 'ar';
+
+        function translatePage(lang) {
+            const t = translations[lang] || translations.ar;
+
+            // Nav
+            const navLinks = document.querySelectorAll('.nav-link');
+            t.nav.forEach((text, i) => { if (navLinks[i]) navLinks[i].textContent = text; });
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            t.nav.forEach((text, i) => { if (mobileLinks[i]) mobileLinks[i].textContent = text; });
+
+            // Brand
+            const brand = document.querySelector('.brand-text');
+            if (brand) brand.textContent = lang === 'ar' ? 'مواصلات' : 'WASLAT';
+
+            // Hero
+            const cityBadge = document.querySelector('.city-badge');
+            if (cityBadge) cityBadge.textContent = t.hero[0];
+            const line1 = document.querySelector('.hero-line1');
+            if (line1) line1.textContent = t.hero[1];
+            const line2 = document.querySelector('.hero-line2');
+            if (line2) line2.textContent = t.hero[2];
+            const heroDesc = document.querySelector('.hero-desc');
+            if (heroDesc) heroDesc.textContent = t.hero[3];
+            const usersLabel = document.querySelector('.users-label');
+            if (usersLabel) usersLabel.textContent = lang === 'ar' ? 'مستخدم نشط' : 'Active Users';
+
+            // Stats
+            const statLabels = [
+                document.querySelector('.stat-label1'),
+                document.querySelector('.stat-label2'),
+                document.querySelector('.stat-label3'),
+                document.querySelector('.stat-label4')
+            ];
+            t.stats.forEach((text, i) => { if (statLabels[i]) statLabels[i].textContent = text; });
+
+            // About
+            const aboutBadge = document.querySelector('.about-badge');
+            if (aboutBadge) aboutBadge.textContent = t.about[0];
+            const aboutTitle = document.querySelector('.about-title');
+            if (aboutTitle) {
+                aboutTitle.innerHTML =
+                    `${t.about[1]} <br class="hidden lg:block" />${t.about[2]} <span class="text-blue-400">${t.about[3]}</span>`;
+            }
+            const aboutSub = document.querySelector('.about-sub');
+            if (aboutSub) aboutSub.textContent = t.about[4];
+            const aboutP1 = document.querySelector('.about-p1');
+            if (aboutP1) aboutP1.innerHTML = `<strong class="text-blue-400">WASLAT</strong> ${t.about[5]}`;
+            const aboutP2 = document.querySelector('.about-p2');
+            if (aboutP2) aboutP2.textContent = t.about[6];
+            const tags = document.querySelectorAll('.tag1, .tag2, .tag3');
+            t.tags.forEach((text, i) => { if (tags[i]) tags[i].textContent = text; });
+
+            // Services
+            const servicesBadge = document.querySelector('.services-badge');
+            if (servicesBadge) servicesBadge.textContent = t.services[0];
+            const servicesTitle = document.querySelector('.services-title');
+            if (servicesTitle) servicesTitle.textContent = t.services[1];
+            const servicesSub = document.querySelector('.services-sub');
+            if (servicesSub) servicesSub.textContent = t.services[2];
+
+            const srv1Title = document.querySelector('.srv-title1');
+            if (srv1Title) srv1Title.textContent = t.srv1[0];
+            const srv1Desc = document.querySelector('.srv-desc1');
+            if (srv1Desc) srv1Desc.textContent = t.srv1[1];
+            const srv1Steps = document.querySelectorAll('.srv-step1-1, .srv-step1-2, .srv-step1-3, .srv-step1-4, .srv-step1-5, .srv-step1-6, .srv-step1-7');
+            for (let i = 0; i < srv1Steps.length && i < 7; i++) {
+                if (srv1Steps[i]) srv1Steps[i].textContent = t.srv1[i + 2];
+            }
+
+            const srv2Title = document.querySelector('.srv-title2');
+            if (srv2Title) srv2Title.textContent = t.srv2[0];
+            const srv2Desc = document.querySelector('.srv-desc2');
+            if (srv2Desc) srv2Desc.textContent = t.srv2[1];
+            const srv2Steps = document.querySelectorAll('.srv-step2-1, .srv-step2-2, .srv-step2-3, .srv-step2-4, .srv-step2-5, .srv-step2-6, .srv-step2-7, .srv-step2-8, .srv-step2-9');
+            for (let i = 0; i < srv2Steps.length && i < 9; i++) {
+                if (srv2Steps[i]) srv2Steps[i].textContent = t.srv2[i + 2];
+            }
+            const paymentMethod = document.querySelector('.payment-method');
+            if (paymentMethod) paymentMethod.textContent = t.srv2[11];
+
+            const srv3Title = document.querySelector('.srv-title3');
+            if (srv3Title) srv3Title.textContent = t.srv3[0];
+            const srv3Desc = document.querySelector('.srv-desc3');
+            if (srv3Desc) srv3Desc.textContent = t.srv3[1];
+            const srv3Steps = document.querySelectorAll('.srv-step3-1, .srv-step3-2, .srv-step3-3, .srv-step3-4, .srv-step3-5, .srv-step3-6, .srv-step3-7, .srv-step3-8, .srv-step3-9');
+            for (let i = 0; i < srv3Steps.length && i < 9; i++) {
+                if (srv3Steps[i]) srv3Steps[i].textContent = t.srv3[i + 2];
+            }
+            const shuttleNote = document.querySelector('.shuttle-note');
+            if (shuttleNote) shuttleNote.textContent = t.srv3[11];
+
+            // How
+            const howBadge = document.querySelector('.how-badge');
+            if (howBadge) howBadge.textContent = t.how[0];
+            const howTitle = document.querySelector('.how-title');
+            if (howTitle) howTitle.textContent = t.how[1];
+            const howSub = document.querySelector('.how-sub');
+            if (howSub) howSub.textContent = t.how[2];
+            const howSteps = [
+                document.querySelector('.how-step1-title'),
+                document.querySelector('.how-step2-title'),
+                document.querySelector('.how-step3-title'),
+                document.querySelector('.how-step4-title')
+            ];
+            const howDescs = [
+                document.querySelector('.how-step1-desc'),
+                document.querySelector('.how-step2-desc'),
+                document.querySelector('.how-step3-desc'),
+                document.querySelector('.how-step4-desc')
+            ];
+            for (let i = 0; i < 4; i++) {
+                if (howSteps[i]) howSteps[i].textContent = t.how[3 + i * 2];
+                if (howDescs[i]) howDescs[i].textContent = t.how[4 + i * 2];
+            }
+            const howNote = document.querySelector('.how-note');
+            if (howNote) howNote.textContent = t.how[11];
+
+            // Privacy
+            const privacyTitle = document.querySelector('.privacy-title');
+            if (privacyTitle) privacyTitle.textContent = t.privacy[0];
+            const privacyDate = document.querySelector('.privacy-date');
+            if (privacyDate) privacyDate.textContent = t.privacy[1];
+            const privacyP1 = document.querySelector('.privacy-p1');
+            if (privacyP1) privacyP1.textContent = t.privacy[2];
+            const privacyP2 = document.querySelector('.privacy-p2');
+            if (privacyP2) privacyP2.textContent = t.privacy[3];
+
+            // Terms
+            const termsTitle = document.querySelector('.terms-title');
+            if (termsTitle) termsTitle.textContent = t.terms[0];
+            const termsDate = document.querySelector('.terms-date');
+            if (termsDate) termsDate.textContent = t.terms[1];
+            const termsP1 = document.querySelector('.terms-p1');
+            if (termsP1) termsP1.textContent = t.terms[2];
+            const termsLis = document.querySelectorAll('.terms-li1, .terms-li2, .terms-li3');
+            for (let i = 0; i < termsLis.length && i < 3; i++) {
+                if (termsLis[i]) termsLis[i].textContent = t.terms[i + 3];
+            }
+
+            // Contact
+            const contactBadge = document.querySelector('.contact-badge');
+            if (contactBadge) contactBadge.textContent = t.contact[0];
+            const contactTitle = document.querySelector('.contact-title');
+            if (contactTitle) {
+                contactTitle.innerHTML = `${t.contact[1]} <br class="hidden lg:block" />${t.contact[2]}`;
+            }
+            const contactSub = document.querySelector('.contact-sub');
+            if (contactSub) contactSub.textContent = t.contact[3];
+            const contactLabels = document.querySelectorAll('.contact-label-name, .contact-label-phone, .contact-label-email, .contact-label-msg');
+            for (let i = 0; i < contactLabels.length && i < 4; i++) {
+                if (contactLabels[i]) contactLabels[i].textContent = t.contact[i + 4];
+            }
+            const contactBtn = document.querySelector('.contact-btn-text');
+            if (contactBtn) contactBtn.textContent = t.contact[8];
+
+            // ===== FOOTER TRANSLATION =====
+            const ft = t.footer;
+            const footerBrand = document.querySelector('.footer-brand');
+            if (footerBrand) footerBrand.textContent = ft.brand;
+            const footerBrandDesc = document.querySelector('.footer-brand-desc');
+            if (footerBrandDesc) footerBrandDesc.textContent = ft.brandDesc;
+            const footerQuickTitle = document.querySelector('.footer-quick-title');
+            if (footerQuickTitle) footerQuickTitle.textContent = ft.quickTitle;
+            const quickLinks = document.querySelectorAll('.footer-link-home, .footer-link-about, .footer-link-services, .footer-link-how, .footer-link-contact');
+            if (quickLinks.length >= 5) {
+                ft.quickLinks.forEach((text, i) => { if (quickLinks[i]) quickLinks[i].textContent = text; });
+            }
+            const footerServicesTitle = document.querySelector('.footer-services-title');
+            if (footerServicesTitle) footerServicesTitle.textContent = ft.servicesTitle;
+            const serviceLinks = document.querySelectorAll('.footer-service-ride, .footer-service-delivery, .footer-service-shuttle, .footer-service-subscription');
+            if (serviceLinks.length >= 4) {
+                ft.services.forEach((text, i) => { if (serviceLinks[i]) serviceLinks[i].textContent = text; });
+            }
+            const footerContactTitle = document.querySelector('.footer-contact-title');
+            if (footerContactTitle) footerContactTitle.textContent = ft.contactTitle;
+            const footerLocation = document.querySelector('.footer-location');
+            if (footerLocation) footerLocation.textContent = ft.location;
+            const footerPhone = document.querySelector('.footer-phone');
+            if (footerPhone) footerPhone.textContent = ft.phone;
+            const footerEmail = document.querySelector('.footer-email');
+            if (footerEmail) footerEmail.textContent = ft.email;
+            const footerSupport = document.querySelector('.footer-support');
+            if (footerSupport) footerSupport.textContent = ft.support;
+            const footerRights = document.querySelector('.footer-rights');
+            if (footerRights) footerRights.textContent = ft.rights;
+            const footerPrivacy = document.querySelector('.footer-privacy');
+            if (footerPrivacy) footerPrivacy.textContent = ft.privacy;
+            const footerTerms = document.querySelector('.footer-terms');
+            if (footerTerms) footerTerms.textContent = ft.terms;
+            const footerMade = document.querySelector('.footer-made');
+            if (footerMade) footerMade.textContent = ft.made;
+            const footerCopy = document.querySelector('.footer-copy');
+            if (footerCopy) footerCopy.textContent = lang === 'ar' ? '© 2026 WASLAT' : '© 2026 WASLAT';
+
+            // Modal
+            const modalTitle = document.querySelector('.modal-title');
+            if (modalTitle) modalTitle.textContent = t.modal[0];
+            const modalSub = document.querySelector('.modal-sub');
+            if (modalSub) modalSub.textContent = t.modal[1];
+            const modalLabels = document.querySelectorAll('.modal-label-org, .modal-label-manager, .modal-label-phone, .modal-label-email');
+            for (let i = 0; i < modalLabels.length && i < 4; i++) {
+                if (modalLabels[i]) modalLabels[i].textContent = t.modal[i + 2];
+            }
+            const modalBtn = document.querySelector('.modal-btn-text');
+            if (modalBtn) modalBtn.textContent = t.modal[6];
+            const modalFooter = document.querySelector('.modal-footer');
+            if (modalFooter) modalFooter.textContent = t.modal[7];
+
+            // Toast
+            const toastMsg = document.querySelector('.toast-msg');
+            if (toastMsg) toastMsg.textContent = t.toast;
+
+            // Lang toggle
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            const mobileAr = document.getElementById('mobile-lang-ar');
+            const mobileEn = document.getElementById('mobile-lang-en');
+            if (mobileAr && mobileEn) {
+                mobileAr.style.color = lang === 'ar' ? '#fff' : '#6b7280';
+                mobileAr.style.fontWeight = lang === 'ar' ? '700' : '400';
+                mobileEn.style.color = lang === 'en' ? '#fff' : '#6b7280';
+                mobileEn.style.fontWeight = lang === 'en' ? '700' : '400';
+            }
+        }
+
+        function setLang(lang) {
+            currentLang = lang;
+            const dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.dir = dir;
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            translatePage(lang);
+            localStorage.lang = lang;
+            showToast(lang === 'ar' ? 'تم التبديل إلى العربية' : 'Switched to English');
+        }
+
+        document.getElementById('lang-ar')?.addEventListener('click', () => setLang('ar'));
+        document.getElementById('lang-en')?.addEventListener('click', () => setLang('en'));
+        document.getElementById('mobile-lang-ar')?.addEventListener('click', () => setLang('ar'));
+        document.getElementById('mobile-lang-en')?.addEventListener('click', () => setLang('en'));
+
+        // ========== MOBILE MENU ==========
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileBtn.querySelector('i').className = isHidden ? 'fa-solid fa-bars text-xl' :
+                    'fa-solid fa-xmark text-xl';
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.querySelector('i').className = 'fa-solid fa-bars text-xl';
+                });
+            });
+        }
+
+        // ========== SMOOTH SCROLL ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ========== CONTACT FORM ==========
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const orig = btn.innerHTML;
+                btn.innerHTML = 'جاري الإرسال...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                    btn.disabled = false;
+                    this.reset();
+                    const msg = currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.' :
+                        'Message sent successfully! We will contact you soon.';
+                    showToast(msg);
+                }, 1400);
+            });
+        }
+
+        // ========== REGISTER MODAL ==========
+        let modalOpen = false;
+
+        window.showRegisterModal = function() {
+            const modal = document.getElementById('register-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            modalOpen = true;
+        };
+
+        window.hideRegisterModal = function() {
+            const modal = document.getElementById('register-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            modalOpen = false;
+        };
+
+        document.getElementById('register-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const orig = btn.innerHTML;
+            btn.innerHTML = 'جاري الإرسال...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = 'تم الإرسال ✓';
+                btn.classList.add('!bg-emerald-600');
+                setTimeout(() => {
+                    hideRegisterModal();
+                    this.reset();
+                    btn.innerHTML = orig;
+                    btn.disabled = false;
+                    btn.classList.remove('!bg-emerald-600');
+                    const msg = currentLang === 'ar' ? 'تم استلام طلب التسجيل! سنتواصل معك خلال 48 ساعة.' :
+                        'Registration request received! We will contact you within 48 hours.';
+                    showToast(msg);
+                }, 1200);
+            }, 1200);
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modalOpen) hideRegisterModal();
+        });
+
+        // ========== TOAST ==========
+        function showToast(msg) {
+            const toast = document.getElementById('success-toast');
+            if (!toast) return;
+            const span = toast.querySelector('span');
+            if (span) span.textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => {
+                toast.classList.remove('flex');
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // ========== NAVBAR SHADOW ==========
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-2xl', 'shadow-black/30');
+            } else {
+                navbar.classList.remove('shadow-2xl', 'shadow-black/30');
+            }
+        });
+
+        // ========== ACTIVE NAV LINK ==========
+        const sections = ['home', 'about', 'services', 'how-to-ride', 'privacy', 'contact'];
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = 'home';
+            const scrollY = window.scrollY + 150;
+            for (const id of sections) {
+                const el = document.getElementById(id);
+                if (el && scrollY >= el.offsetTop) current = id;
+            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ========== KEYBOARD SHORTCUT ==========
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '?' && document.activeElement?.tagName === 'BODY') {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => document.getElementById('name')?.focus(), 700);
+            }
+        });
+
+        // ========== INIT ==========
+        const savedLang = localStorage.lang || 'ar';
+        setLang(savedLang);
+
+        console.log('%c[WASLAT] Page loaded successfully ✅', 'color:#4a8af4; font-weight:bold; font-size:14px;');
+
+    })();
+</script>
+
+</body>
+</html>
