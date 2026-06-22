@@ -695,11 +695,12 @@
             <div class="flex items-center justify-between h-20">
 
                 <!-- Logo -->
-                <div class="flex items-center gap-3">
-                      <img src="logo.jpeg" alt="logo.jpeg" class="w-20 h-20 object-cover" style="width: 80px; height: 80px;" >
-                    <span class="text-2xl font-extrabold tracking-tighter text-white brand-text">مواصلات</span>
-                    <span class="hidden md:inline text-[10px] font-bold tracking-[2px] text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">v2.0</span>
-                </div>
+             <div class="flex items-center gap-3">
+    <img src="logo.jpeg" alt="logo.jpeg" class="w-20 h-20 object-cover dark:block hidden" style="width: 80px; height: 80px;" />
+    <img src="logo-no-bg.png" alt="logo-no-bg.png" class="w-20 h-20 object-cover light:block hidden" style="width: 80px; height: 80px; display: none;" />
+    <span class="text-2xl font-extrabold tracking-tighter text-white brand-text">مواصلات</span>
+    <span class="hidden md:inline text-[10px] font-bold tracking-[2px] text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">v2.0</span>
+</div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-1 text-sm font-medium">
@@ -727,7 +728,7 @@
 
                     <!-- Register Btn -->
                     <button onclick="showRegisterModal()"
-                    class="hidden md:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-[#1a4a8a] text-white rounded-2xl hover:bg-[#2a5a9a] transition-all shadow-lg shadow-blue-900/20">
+                    class="hidden md:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-[#1a4a8a] !text-white rounded-2xl hover:bg-[#2a5a9a] transition-all shadow-lg shadow-blue-900/20">
                     <i class="fa-regular fa-building"></i>
                     <span>تسجيل المؤسسة</span>
                 </button>
@@ -878,9 +879,12 @@
         <div class="grid lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-5">
                 <span class="section-badge about-badge">About Us</span>
-                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] about-title">
-                    Building a bridge <br class="hidden lg:block" />between you and <span class="text-blue-400">the city</span>
-                </h2>
+               <h2 class="text-4xl lg:text-5xl leading-[60px] lg:leading-[70px] font-extrabold tracking-tight about-title">
+    Building a bridge
+    <span class="block mt-10">
+        between you and <span class="text-blue-400">the city</span>
+    </span>
+</h2>
                 <p class="mt-6 text-lg text-gray-300 leading-relaxed about-sub">
                     WASLAT is more than just a transport app; it's your daily partner in smart mobility.
                 </p>
@@ -950,31 +954,32 @@
             </div>
 
             <!-- Service 2: Delivery -->
-            <div class="service-card rounded-3xl p-8">
-                <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
-                    <i class="fa-solid fa-truck"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 srv-title2">Delivery Service</h3>
-                <p class="text-gray-400 text-sm leading-relaxed srv-desc2">Send your order easily with qualified couriers.</p>
-                <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
-                    <li data-step="1" class="srv-step2-1">Open WASLAT app</li>
-                    <li data-step="2" class="srv-step2-2">Select "Delivery"</li>
-                    <li data-step="3" class="srv-step2-3">Set pickup location</li>
-                    <li data-step="4" class="srv-step2-4">Enter order details</li>
-                    <li data-step="5" class="srv-step2-5">Set delivery location</li>
-                    <li data-step="6" class="srv-step2-6">Review details</li>
-                    <li data-step="7" class="srv-step2-7">Confirm order</li>
-                    <li data-step="8" class="srv-step2-8">Track courier</li>
-                    <li data-step="9" class="srv-step2-9">Receive order</li>
-                </ul>
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Fast delivery</span>
-                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> City-wide coverage</span>
-                </div>
-                <div class="mt-3 text-xs text-gray-500 border-t border-white/5 pt-3">
-                    <i class="fa-regular fa-money-bill-1 text-amber-400 ml-1"></i> <span class="payment-method">Cash on delivery</span>
-                </div>
-            </div>
+           <!-- Service 2: Delivery - changed icon from fa-truck to fa-motorcycle -->
+<div class="service-card rounded-3xl p-8">
+    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
+        <i class="fa-solid fa-motorcycle"></i>
+    </div>
+    <h3 class="text-2xl font-bold text-white mb-3 srv-title2">Delivery Service</h3>
+    <p class="text-gray-400 text-sm leading-relaxed srv-desc2">Send your order easily with qualified couriers.</p>
+    <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
+        <li data-step="1" class="srv-step2-1">Open WASLAT app</li>
+        <li data-step="2" class="srv-step2-2">Select "Delivery"</li>
+        <li data-step="3" class="srv-step2-3">Set pickup location</li>
+        <li data-step="4" class="srv-step2-4">Enter order details</li>
+        <li data-step="5" class="srv-step2-5">Set delivery location</li>
+        <li data-step="6" class="srv-step2-6">Review details</li>
+        <li data-step="7" class="srv-step2-7">Confirm order</li>
+        <li data-step="8" class="srv-step2-8">Track courier</li>
+        <li data-step="9" class="srv-step2-9">Receive order</li>
+    </ul>
+    <div class="mt-4 flex flex-wrap gap-2">
+        <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Fast delivery</span>
+        <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> City-wide coverage</span>
+    </div>
+    <div class="mt-3 text-xs text-gray-500 border-t border-white/5 pt-3">
+        <i class="fa-regular fa-money-bill-1 text-amber-400 ml-1"></i> <span class="payment-method">Cash on delivery</span>
+    </div>
+</div>
 
             <!-- Service 3: Shuttle -->
             <div class="service-card rounded-3xl p-8">
@@ -1882,6 +1887,30 @@ class="bg-[#0a1a3a] w-full max-w-md rounded-3xl shadow-2xl border border-white/1
         console.log('%c[WASLAT] Page loaded successfully ✅', 'color:#4a8af4; font-weight:bold; font-size:14px;');
 
     })();
+     function updateLogos(theme) {
+        const darkLogo = document.querySelector('img[src="logo.jpeg"]');
+        const lightLogo = document.querySelector('img[src="logo-no-bg.png"]');
+        if (theme === 'light') {
+            darkLogo.style.display = 'none';
+            lightLogo.style.display = 'block';
+        } else {
+            darkLogo.style.display = 'block';
+            lightLogo.style.display = 'none';
+        }
+    }
+
+    // Override setTheme function to include logo update
+    const originalSetTheme = setTheme;
+    setTheme = function(theme) {
+        originalSetTheme(theme);
+        updateLogos(theme);
+    };
+
+    // Call on init
+    setTimeout(function() {
+        const currentTheme = localStorage.theme || 'dark';
+        updateLogos(currentTheme);
+    }, 100);
 </script>
 
 </body>
