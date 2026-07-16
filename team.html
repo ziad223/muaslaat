@@ -729,13 +729,13 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-1 text-sm font-medium">
-                    <a href="#home" class="nav-link active">الرئيسية</a>
-                    <a href="#about" class="nav-link">من نحن</a>
+                    <a href="index.html#home" class="nav-link active">الرئيسية</a>
+                    <a href="index.html#about" class="nav-link">من نحن</a>
                     <a href="team.html" class="nav-link">فريق العمل</a>
-                    <a href="#services" class="nav-link">خدماتنا</a>
-                    <a href="#how-to-ride" class="nav-link">كيف تستخدم</a>
-                    <a href="#privacy" class="nav-link">الخصوصية</a>
-                    <a href="#contact" class="nav-link">اتصل بنا</a>
+                    <a href="index.html#services" class="nav-link">خدماتنا</a>
+                    <a href="index.html#how-to-ride" class="nav-link">كيف تستخدم</a>
+                    <a href="index.html#privacy" class="nav-link">الخصوصية</a>
+                    <a href="index.html#contact" class="nav-link">اتصل بنا</a>
                 </div>
 
                 <!-- Right actions -->
@@ -770,13 +770,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden">
         <div class="px-6 py-6 flex flex-col gap-1 text-sm">
-            <a href="#home" class="mobile-link px-4 py-3">الرئيسية</a>
-            <a href="#about" class="mobile-link px-4 py-3">من نحن</a>
+            <a href="index.html#home" class="mobile-link px-4 py-3">الرئيسية</a>
+            <a href="index.html#about" class="mobile-link px-4 py-3">من نحن</a>
             <a href="team.html" class="mobile-link px-4 py-3">فريق العمل</a>
-            <a href="#services" class="mobile-link px-4 py-3">خدماتنا</a>
-            <a href="#how-to-ride" class="mobile-link px-4 py-3">كيف تستخدم</a>
-            <a href="#privacy" class="mobile-link px-4 py-3">سياسة الخصوصية</a>
-            <a href="#contact" class="mobile-link px-4 py-3">اتصل بنا</a>
+            <a href="index.html#services" class="mobile-link px-4 py-3">خدماتنا</a>
+            <a href="index.html#how-to-ride" class="mobile-link px-4 py-3">كيف تستخدم</a>
+            <a href="index.html#privacy" class="mobile-link px-4 py-3">سياسة الخصوصية</a>
+            <a href="index.html#contact" class="mobile-link px-4 py-3">اتصل بنا</a>
             <div class="pt-4 border-t border-white/10 mt-2">
                 <button onclick="showRegisterModal(); document.getElementById('mobile-menu').classList.add('hidden')"
                 class="w-full flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold bg-[#1a4a8a] text-white rounded-2xl">
@@ -793,469 +793,64 @@
 </div>
 </nav>
 
-<!-- ============================================================ -->
-<!-- HERO -->
-<!-- ============================================================ -->
-<section id="home" class="relative min-h-[100vh] w-full overflow-hidden flex flex-col justify-center">
-    <!-- FULL SCREEN SLIDER -->
-    <div class="absolute inset-0 w-full h-full" id="hero-slider">
-        
-        <!-- Slide 1 -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10 flex items-center justify-center">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=80');"></div>
-            <div class="absolute inset-0 bg-[#0a1a3a]/75"></div>
-            <div class="relative z-10 text-center px-4 w-full">
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.5] tracking-tight mb-2 max-w-5xl mx-auto">
-                    <span class="text-white block mb-2 lg:mb-4 drop-shadow-lg">مواصلات...</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-300 drop-shadow-lg">أسهل وأسرع.</span>
-                </h1>
-            </div>
-        </div>
-        
-        <!-- Slide 2 -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 flex items-center justify-center">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80');"></div>
-            <div class="absolute inset-0 bg-[#0a1a3a]/75"></div>
-            <div class="relative z-10 text-center px-4 w-full">
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.5] tracking-tight mb-2 max-w-5xl mx-auto">
-                    <span class="text-white block mb-2 lg:mb-4 drop-shadow-lg">زِد رحلاتك</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-300 drop-shadow-lg">ووصل إلى عملاء أكثر.</span>
-                </h1>
-            </div>
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 flex items-center justify-center">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=1920&q=80');"></div>
-            <div class="absolute inset-0 bg-[#0a1a3a]/75"></div>
-            <div class="relative z-10 text-center px-4 w-full">
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.5] tracking-tight mb-2 max-w-5xl mx-auto">
-                    <span class="text-white block mb-2 lg:mb-4 drop-shadow-lg">إدارة رحلاتك</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-300 drop-shadow-lg">بكل سهولة.</span>
-                </h1>
-            </div>
-        </div>
-        
-        <!-- Slide 4 -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 flex items-center justify-center">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519003300449-424ad0405076?w=1920&q=80');"></div>
-            <div class="absolute inset-0 bg-[#0a1a3a]/75"></div>
-            <div class="relative z-10 text-center px-4 w-full">
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.5] tracking-tight mb-2 max-w-5xl mx-auto">
-                    <span class="text-white block mb-2 lg:mb-4 drop-shadow-lg">حلول نقل</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-300 drop-shadow-lg">ذكية وآمنة.</span>
-                </h1>
-            </div>
-        </div>
-        
-        <!-- Slide 5 -->
-        <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 flex items-center justify-center">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80');"></div>
-            <div class="absolute inset-0 bg-[#0a1a3a]/75"></div>
-            <div class="relative z-10 text-center px-4 w-full">
-                <h1 class="text-4xl lg:text-6xl font-extrabold leading-[1.6] tracking-tight mb-2 max-w-5xl mx-auto">
-                    <span class="text-white block mb-2 lg:mb-4 drop-shadow-lg">كل ما تحتاجه لإدارة وتنمية</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-300 drop-shadow-lg">نشاطك في مكان واحد.</span>
-                </h1>
-            </div>
-        </div>
-    </div>
-
-    <!-- STATIC ELEMENTS ON TOP -->
-    <div class="relative z-20 w-full mt-auto pb-10 flex flex-col items-center">
-        <!-- Logo -->
-        <div class="opacity-95 flex items-center justify-center gap-3 mb-6 bg-black/40 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 shadow-2xl">
-            <img src="logo2.png" alt="Mowasalat" class="h-8 object-contain dark:block hidden" />
-            <img src="logo-no-bg.png" alt="Mowasalat" class="h-8 object-contain light:block hidden" style="display:none;" />
-            <span class="text-sm font-bold tracking-widest text-white">MOWASALAT</span>
-        </div>
-
-        <!-- Buttons -->
-        <div class="flex flex-wrap justify-center gap-4 px-4">
-            <a href="#" class="relative overflow-hidden inline-flex items-center gap-3 bg-white text-[#0a1a3a] hover:bg-gray-100 font-bold px-8 h-14 rounded-3xl text-base shadow-xl shadow-black/30 active:scale-[0.97] transition-all shimmer-btn">
-                <i class="fa-brands fa-google-play text-2xl"></i>
-                <div class="text-left leading-none">
-                    <div class="text-[9px] font-medium tracking-wider opacity-60">GET IT ON</div>
-                    <div class="font-bold -mt-0.5">Google Play</div>
-                </div>
-            </a>
-            <a href="#" class="inline-flex items-center gap-3 bg-black/40 hover:bg-black/60 border border-white/20 backdrop-blur-md font-semibold px-8 h-14 rounded-3xl text-base text-white active:scale-[0.97] shadow-xl shadow-black/30 transition-all">
-                <i class="fa-brands fa-apple text-3xl"></i>
-                <div class="text-left leading-none">
-                    <div class="text-[9px] font-medium tracking-wider opacity-60">Download on</div>
-                    <div class="font-bold -mt-0.5">App Store</div>
-                </div>
-            </a>
-        </div>
-
-        <!-- Social proof -->
-        <div class="flex items-center justify-center gap-4 pt-6 px-4">
-            <div class="flex -space-x-3">
-                <div class="w-10 h-10 rounded-full ring-2 ring-white/40 overflow-hidden"><img src="https://i.pravatar.cc/40?img=28" class="w-full h-full object-cover" alt="user" /></div>
-                <div class="w-10 h-10 rounded-full ring-2 ring-white/40 overflow-hidden"><img src="https://i.pravatar.cc/40?img=32" class="w-full h-full object-cover" alt="user" /></div>
-                <div class="w-10 h-10 rounded-full ring-2 ring-white/40 overflow-hidden"><img src="https://i.pravatar.cc/40?img=47" class="w-full h-full object-cover" alt="user" /></div>
-                <div class="w-10 h-10 rounded-full ring-2 ring-white/40 bg-white/20 backdrop-blur-md flex items-center justify-center text-xs font-bold text-white shadow-lg">+80k</div>
-            </div>
-            <div class="text-left">
-                <div class="font-bold text-lg users-count text-white shadow-sm">85,000+</div>
-                <div class="text-sm text-blue-200 users-label shadow-sm">مستخدم نشط</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hidden elements to preserve JS translation logic -->
-    <div style="display: none;">
-        <span class="hero-line1"></span>
-        <span class="hero-line2"></span>
-        <p class="hero-desc"></p>
-    </div>
-</section>
-
-<!-- SLIDER SCRIPT -->
-<script>
-    (function() {
-        const slides = document.querySelectorAll('.hero-slide');
-        let current = 0;
-        if(slides.length > 1) {
-            setInterval(() => {
-                slides[current].classList.remove('opacity-100', 'z-10');
-                slides[current].classList.add('opacity-0', 'z-0');
-                current = (current + 1) % slides.length;
-                slides[current].classList.remove('opacity-0', 'z-0');
-                slides[current].classList.add('opacity-100', 'z-10');
-            }, 3500);
-        }
-    })();
-</script>
-
-<!-- Stats section removed as requested -->
 
 <!-- ============================================================ -->
-<!-- ABOUT -->
+<!-- TEAM SECTION -->
 <!-- ============================================================ -->
-<section id="about" class="py-20 lg:py-28">
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
-        <div class="grid lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-5">
-                <span class="section-badge about-badge">About Us</span>
-               <h2 class="text-4xl lg:text-5xl leading-[60px] lg:leading-[70px] font-extrabold tracking-tight about-title">
-    Building a bridge
-    <span class="block mt-10">
-        between you and <span class="text-blue-400">the city</span>
-    </span>
-</h2>
-                <p class="mt-6 text-lg text-gray-300 leading-relaxed about-sub">
-                    Mowasalat is more than just a transport app; it's your daily partner in smart mobility.
-                </p>
-             
-            </div>
-
-            <div class="lg:col-span-7 space-y-6 text-gray-300 leading-relaxed text-[16px]">
-                <p class="about-p1">
-                    <strong class="text-blue-400">Mowasalat</strong> is a smart transport app that connects passengers with verified drivers to provide fast and safe city travel. We offer a modern experience that combines easy ride booking with flexible monthly subscription options.
-                </p>
-                <p class="about-p2">
-                    Our goal is to make daily mobility easier and more reliable using modern technology and providing high-quality service for everyone. We believe every ride should be an enjoyable and safe experience.
-                </p>
-                <div class="flex flex-wrap gap-3 pt-2">
-                    <span class="inline-block px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold text-gray-300 border border-white/5"><i class="fa-regular fa-circle-check text-emerald-400 ml-1"></i> <span class="tag1">Verified drivers</span></span>
-                    <span class="inline-block px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold text-gray-300 border border-white/5"><i class="fa-regular fa-circle-check text-emerald-400 ml-1"></i> <span class="tag2">24/7 Support</span></span>
-                    <span class="inline-block px-4 py-1.5 bg-white/5 rounded-full text-xs font-semibold text-gray-300 border border-white/5"><i class="fa-regular fa-circle-check text-emerald-400 ml-1"></i> <span class="tag3">Transparent pricing</span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Team section moved to team.html -->
-
-<!-- ============================================================ -->
-<!-- PARTNERS SECTION -->
-<!-- ============================================================ -->
-<section id="partners" class="py-24 relative overflow-hidden bg-[#080808]">
-    <!-- Glowing background elements -->
-    <div class="absolute top-1/2 left-1/4 w-[30rem] h-[30rem] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
-    <div class="absolute top-1/2 right-1/4 w-[30rem] h-[30rem] bg-emerald-600/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
-
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-10 relative z-10">
-        <div class="text-center mb-16">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold tracking-wider mb-4 border border-blue-500/20 partners-badge">شركاء النجاح</span>
-            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white mt-2 partners-title">ثقة نعتز بها</h2>
-            <p class="mt-4 text-gray-400 max-w-2xl mx-auto text-lg partners-desc">نفخر بالتعاون مع نخبة من الشركاء لتحقيق رؤيتنا المشتركة وتقديم أفضل الخدمات بتميز واحترافية.</p>
-        </div>
-
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <!-- Partner 1 -->
-            <div class="group relative rounded-[2rem] bg-white/5 border border-white/10 p-6 flex items-center justify-center hover:bg-white/10 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(59,130,246,0.2)]">
-                <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue-500/0 via-transparent to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
-                <div class="relative w-full aspect-square flex items-center justify-center bg-white rounded-3xl p-6 shadow-inner overflow-hidden">
-                    <img src="partners-1.jpg" alt="شريك النجاح 1" class="max-w-full max-h-full object-contain filter group-hover:scale-110 transition-transform duration-700 ease-out drop-shadow-sm">
-                </div>
-            </div>
-
-            <!-- Partner 2 -->
-            <div class="group relative rounded-[2rem] bg-white/5 border border-white/10 p-6 flex items-center justify-center hover:bg-white/10 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(16,185,129,0.2)]">
-                <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-emerald-500/0 via-transparent to-teal-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/5 transition-all duration-500"></div>
-                <div class="relative w-full aspect-square flex items-center justify-center bg-white rounded-3xl p-6 shadow-inner overflow-hidden">
-                    <img src="partners-3.jpg" alt="شريك النجاح 2" class="max-w-full max-h-full object-contain filter group-hover:scale-110 transition-transform duration-700 ease-out drop-shadow-sm">
-                </div>
-            </div>
-
-            <!-- Partner 3 -->
-            <div class="group relative rounded-[2rem] bg-white/5 border border-white/10 p-6 flex items-center justify-center hover:bg-white/10 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(245,158,11,0.2)]">
-                <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-amber-500/0 via-transparent to-orange-500/0 group-hover:from-amber-500/5 group-hover:to-orange-500/5 transition-all duration-500"></div>
-                <div class="relative w-full aspect-square flex items-center justify-center bg-white rounded-3xl p-6 shadow-inner overflow-hidden">
-                    <img src="partners-2.jpg" alt="شريك النجاح 3" class="max-w-full max-h-full object-contain filter group-hover:scale-110 transition-transform duration-700 ease-out drop-shadow-sm">
-                </div>
-            </div>
-
-            <!-- Partner 4 -->
-            <div class="group relative rounded-[2rem] bg-white/5 border border-white/10 p-6 flex items-center justify-center hover:bg-white/10 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(236,72,153,0.2)]">
-                <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-pink-500/0 via-transparent to-rose-500/0 group-hover:from-pink-500/5 group-hover:to-rose-500/5 transition-all duration-500"></div>
-                <div class="relative w-full aspect-square flex items-center justify-center bg-white rounded-3xl p-6 shadow-inner overflow-hidden">
-                    <img src="partners-4.jpg" alt="شريك النجاح 4" class="max-w-full max-h-full object-contain filter group-hover:scale-110 transition-transform duration-700 ease-out drop-shadow-sm">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- SERVICES SECTION -->
-<!-- ============================================================ -->
-<section id="services" class="py-20 lg:py-28 border-y border-white/5 bg-black/20">
+<section id="team" class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-black/10">
     <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
         <div class="text-center mb-16">
-            <span class="section-badge services-badge">Our Services</span>
-            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white services-title">Transport &amp; Delivery Services</h2>
-            <p class="mt-3 text-gray-400 max-w-2xl mx-auto services-sub">Towards easier mobility</p>
+            <span class="section-badge team-badge">فريق العمل</span>
+            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white mt-2 team-title">تعرف على قادتنا</h2>
+            <p class="mt-3 text-gray-400 max-w-2xl mx-auto team-sub">نخبة من الكفاءات تعمل بشغف لتقديم أفضل تجربة نقل ذكي</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-
-            <!-- Service 1: Ride Hailing -->
-            <div class="service-card rounded-3xl p-8">
-                <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
-                    <i class="fa-solid fa-car"></i>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="service-card rounded-3xl p-6 text-center group">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 mb-5 relative group-hover:border-blue-400 transition-all">
+                    <img src="team-1.jpeg" alt="مهندس عبدالله مبره الفيفي" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-3 srv-title1">Ride Hailing</h3>
-                <p class="text-gray-400 text-sm leading-relaxed srv-desc1">Book your ride easily with trusted drivers and fast arrival.</p>
-                <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
-                    <li data-step="1" class="srv-step1-1">Open Mowasalat app</li>
-                    <li data-step="2" class="srv-step1-2">Set your pickup location</li>
-                    <li data-step="3" class="srv-step1-3">Choose your destination</li>
-                    <li data-step="4" class="srv-step1-4">Review ride details</li>
-                    <li data-step="5" class="srv-step1-5">Confirm the ride</li>
-                    <li data-step="6" class="srv-step1-6">Track your ride live</li>
-                    <li data-step="7" class="srv-step1-7">Arrive safely</li>
-                </ul>
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Fast &amp; easy</span>
-                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Live tracking</span>
+                <h3 class="text-xl font-bold text-white mb-1 team-member-name">م. عبدالله مبره الفيفي</h3>
+                <p class="text-blue-400 text-sm font-semibold mb-3 team-member-role">رئيس مجلس الإدارة والرئيس التنفيذي</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="service-card rounded-3xl p-6 text-center group">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 mb-5 relative group-hover:border-blue-400 transition-all">
+                    <img src="team-5.jpeg" alt="أ. عبدالله يحيى الفيفي" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
+                <h3 class="text-xl font-bold text-white mb-1 team-member-name">أ. عبدالله يحيى الفيفي</h3>
+                <p class="text-blue-400 text-sm font-semibold mb-3 team-member-role">المدير الإقليمي بمنطقة جازان</p>
             </div>
 
-            <!-- Service 2: Delivery -->
-           <!-- Service 2: Delivery - changed icon from fa-truck to fa-motorcycle -->
-<div class="service-card rounded-3xl p-8">
-    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
-        <i class="fa-solid fa-motorcycle"></i>
-    </div>
-    <h3 class="text-2xl font-bold text-white mb-3 srv-title2">Delivery Service</h3>
-    <p class="text-gray-400 text-sm leading-relaxed srv-desc2">Send your order easily with qualified couriers.</p>
-    <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
-        <li data-step="1" class="srv-step2-1">Open Mowasalat app</li>
-        <li data-step="2" class="srv-step2-2">Select "Delivery"</li>
-        <li data-step="3" class="srv-step2-3">Set pickup location</li>
-        <li data-step="4" class="srv-step2-4">Enter order details</li>
-        <li data-step="5" class="srv-step2-5">Set delivery location</li>
-        <li data-step="6" class="srv-step2-6">Review details</li>
-        <li data-step="7" class="srv-step2-7">Confirm order</li>
-        <li data-step="8" class="srv-step2-8">Track courier</li>
-        <li data-step="9" class="srv-step2-9">Receive order</li>
-    </ul>
-    <div class="mt-4 flex flex-wrap gap-2">
-        <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Fast delivery</span>
-        <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> City-wide coverage</span>
-    </div>
-    <div class="mt-3 text-xs text-gray-500 border-t border-white/5 pt-3">
-        <i class="fa-regular fa-money-bill-1 text-amber-400 ml-1"></i> <span class="payment-method">Cash on delivery</span>
-    </div>
-</div>
-
-            <!-- Service 3: Shuttle -->
-            <div class="service-card rounded-3xl p-8">
-                <div class="w-14 h-14 bg-violet-500/10 text-violet-400 rounded-2xl flex items-center justify-center mb-5 text-3xl">
-                    <i class="fa-solid fa-bus"></i>
+            <!-- Team Member 4 -->
+            <div class="service-card rounded-3xl p-6 text-center group">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 mb-5 relative group-hover:border-blue-400 transition-all">
+                    <img src="team-4.jpeg" alt="أ. يحيى سليمان الفيفي" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-3 srv-title3">Shuttle Service</h3>
-                <p class="text-gray-400 text-sm leading-relaxed srv-desc3">Pre-scheduled rides with fixed routes and designated pickup points.</p>
-                <ul class="mt-4 space-y-2 text-sm text-gray-300 step-list">
-                    <li data-step="1" class="srv-step3-1">Open Mowasalat app</li>
-                    <li data-step="2" class="srv-step3-2">Select "Shuttle"</li>
-                    <li data-step="3" class="srv-step3-3">Set your current location</li>
-                    <li data-step="4" class="srv-step3-4">Browse available rides</li>
-                    <li data-step="5" class="srv-step3-5">Choose the right ride</li>
-                    <li data-step="6" class="srv-step3-6">Select booking type</li>
-                    <li data-step="7" class="srv-step3-7">View ride details</li>
-                    <li data-step="8" class="srv-step3-8">Complete payment</li>
-                    <li data-step="9" class="srv-step3-9">Get your ticket</li>
-                </ul>
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> Regular schedules</span>
-                    <span class="text-xs px-3 py-1 bg-white/5 rounded-full text-emerald-400 border border-white/5"><i class="fa-regular fa-circle-check ml-1"></i> E-tickets</span>
-                </div>
-                <div class="mt-3 text-xs text-amber-400/70 border-t border-white/5 pt-3">
-                    <i class="fa-regular fa-clock ml-1"></i> <span class="shuttle-note">Be there 10 min before departure</span>
-                </div>
+                <h3 class="text-xl font-bold text-white mb-1 team-member-name">أ. يحيى سليمان الفيفي</h3>
+                <p class="text-blue-400 text-sm font-semibold mb-3 team-member-role">الشؤون الإدارية</p>
             </div>
 
-        </div>
-    </div>
-</section>
+            <!-- Team Member 5 -->
+            <div class="service-card rounded-3xl p-6 text-center group">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 mb-5 relative group-hover:border-blue-400 transition-all">
+                    <img src="team-3.jpeg" alt="استاذ علي حسين الفيفي" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1 team-member-name">أ. علي حسين الفيفي</h3>
+                <p class="text-blue-400 text-sm font-semibold mb-3 team-member-role">إدارة التشغيل</p>
+            </div>
 
-<!-- ============================================================ -->
-<!-- HOW TO USE -->
-<!-- ============================================================ -->
-<section id="how-to-ride" class="py-20 lg:py-28">
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
-        <div class="text-center mb-16">
-            <span class="section-badge how-badge">How to use</span>
-            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white how-title">Book your ride easily</h2>
-            <p class="mt-3 text-gray-400 how-sub">Simple steps to get your ride</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
-                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">1</div>
-                <h4 class="font-bold text-white text-lg mb-2 how-step1-title">Open Mowasalat app</h4>
-                <p class="text-sm text-gray-400 how-step1-desc">Login or create a new account.</p>
-            </div>
-            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
-                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">2</div>
-                <h4 class="font-bold text-white text-lg mb-2 how-step2-title">Set your pickup location</h4>
-                <p class="text-sm text-gray-400 how-step2-desc">Your location will be detected automatically or manually.</p>
-            </div>
-            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
-                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">3</div>
-                <h4 class="font-bold text-white text-lg mb-2 how-step3-title">Choose your destination</h4>
-                <p class="text-sm text-gray-400 how-step3-desc">Select the location you want to reach.</p>
-            </div>
-            <div class="glass-card p-6 rounded-3xl text-center hover-lift">
-                <div class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4">4</div>
-                <h4 class="font-bold text-white text-lg mb-2 how-step4-title">Confirm the ride</h4>
-                <p class="text-sm text-gray-400 how-step4-desc">Press "Request Ride" and the request will be sent to the nearest driver.</p>
-            </div>
-        </div>
-        <div class="text-center mt-10">
-            <span class="inline-block px-6 py-2 bg-white/5 rounded-full text-sm text-gray-400 border border-white/5">
-                <i class="fa-regular fa-circle-check text-emerald-400 ml-2"></i> <span class="how-note">Track your ride live and enjoy a safe ride</span>
-            </span>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- PRIVACY & TERMS -->
-<!-- ============================================================ -->
-<section id="privacy" class="py-16 border-y border-white/5 bg-black/20">
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
-        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div>
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white privacy-title">Privacy Policy</h3>
-                        <p class="text-xs text-gray-500 privacy-date">Last updated: January 2026</p>
-                    </div>
+            <!-- Team Member 6 -->
+            <div class="service-card rounded-3xl p-6 text-center group">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 mb-5 relative group-hover:border-blue-400 transition-all">
+                    <img src="team-2.jpeg" alt="استاذ محمد حسن الفيفي" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <div class="text-gray-300 text-sm space-y-3 leading-relaxed">
-                    <p class="privacy-p1">By using the Mowasalat app, you agree to use the service in a legal and responsible manner. The app allows users to book rides or subscribe to available plans according to the chosen package.</p>
-                    <p class="privacy-p2">We use the latest encryption technologies to protect your personal data and ride information. We do not share your data with any third party without your explicit consent.</p>
-                </div>
-            </div>
-            <div>
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl">
-                        <i class="fa-regular fa-file-lines"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white terms-title">Terms &amp; Conditions</h3>
-                        <p class="text-xs text-gray-500 terms-date">Effective from registration date</p>
-                    </div>
-                </div>
-                <div class="text-gray-300 text-sm space-y-3 leading-relaxed">
-                    <p class="terms-p1">Prices and driver availability may vary based on location and time, and the app management reserves the right to update services or terms to improve quality and user experience.</p>
-                    <ul class="list-disc pr-5 space-y-1">
-                        <li class="terms-li1">Provide accurate and updated information when registering</li>
-                        <li class="terms-li2">Follow safety rules during the ride</li>
-                        <li class="terms-li3">Do not use the app for illegal purposes</li>
-                    </ul>
-                </div>
+                <h3 class="text-xl font-bold text-white mb-1 team-member-name">أ. محمد حسن الفيفي</h3>
+                <p class="text-blue-400 text-sm font-semibold mb-3 team-member-role">إدارة التشغيل</p>
             </div>
         </div>
     </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- CONTACT -->
-<!-- ============================================================ -->
-<section id="contact" class="py-20 lg:py-28 bg-[#050b16]">
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
-        <div class="grid lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-5">
-                <span class="inline-block text-blue-400 text-sm font-bold tracking-[2px] contact-badge">Contact Us</span>
-                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight mt-3 leading-[1.1] text-white contact-title">We are here <br class="hidden lg:block" />for you</h2>
-                <p class="mt-4 text-gray-400 max-w-md contact-sub">Our support team is ready to respond to your inquiries within minutes.</p>
-                <div class="mt-8 space-y-4 text-sm text-gray-300">
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-phone text-blue-400 w-5"></i> <span class="contact-phone">0501716663</span></div>
-                    <div class="flex items-center gap-4"><i class="fa-regular fa-envelope text-blue-400 w-5"></i> <span class="contact-email">info@muasalat.net</span></div>
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-location-dot text-blue-400 w-5"></i> <span class="contact-location">Riyadh, Saudi Arabia</span></div>
-                </div>
-                <div class="mt-8 flex gap-4 text-xl text-gray-500">
-                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-7">
-                <div class="glass-card rounded-3xl p-8 border border-white/5 shadow-2xl">
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-5">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-name">Full Name</label>
-                                <input type="text" id="name" required placeholder="Enter your name"
-                                class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-phone">Phone Number</label>
-                                <input type="tel" id="phone" required placeholder="05xxxxxxxx"
-                                class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500" />
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-email">Email Address</label>
-                            <input type="email" id="email" required placeholder="example@email.com"
-                            class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1.5 contact-label-msg">Message</label>
-                            <textarea id="message" rows="4" required placeholder="Write your message here..."
-                            class="w-full rounded-2xl px-5 py-3.5 text-sm text-white placeholder:text-gray-500 resize-y"></textarea>
-                        </div>
-                        <button type="submit"
-                        class="w-full btn-primary py-4 rounded-2xl font-bold flex items-center justify-center gap-3 text-base">
-                        <span class="contact-btn-text">Send Message</span>
-                        <i class="fa-regular fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 </section>
 
 <!-- ============================================================ -->
@@ -1284,11 +879,11 @@
             <div>
                 <h4 class="text-sm font-bold text-white/70 uppercase tracking-wider mb-4 footer-quick-title">روابط سريعة</h4>
                 <ul class="space-y-2.5 text-sm footer-links">
-                    <li><a href="#home" class="footer-link-home">الرئيسية</a></li>
-                    <li><a href="#about" class="footer-link-about">من نحن</a></li>
-                    <li><a href="#services" class="footer-link-services">خدماتنا</a></li>
-                    <li><a href="#how-to-ride" class="footer-link-how">كيف تستخدم</a></li>
-                    <li><a href="#contact" class="footer-link-contact">اتصل بنا</a></li>
+                    <li><a href="index.html#home" class="footer-link-home">الرئيسية</a></li>
+                    <li><a href="index.html#about" class="footer-link-about">من نحن</a></li>
+                    <li><a href="index.html#services" class="footer-link-services">خدماتنا</a></li>
+                    <li><a href="index.html#how-to-ride" class="footer-link-how">كيف تستخدم</a></li>
+                    <li><a href="index.html#contact" class="footer-link-contact">اتصل بنا</a></li>
                 </ul>
             </div>
 
@@ -1296,10 +891,10 @@
             <div>
                 <h4 class="text-sm font-bold text-white/70 uppercase tracking-wider mb-4 footer-services-title">خدماتنا</h4>
                 <ul class="space-y-2.5 text-sm footer-links">
-                    <li><a href="#services" class="footer-service-ride">طلب رحلة</a></li>
-                    <li><a href="#services" class="footer-service-delivery">توصيل الطلبات</a></li>
-                    <li><a href="#services" class="footer-service-shuttle">النقل الترددي</a></li>
-                    <li><a href="#services" class="footer-service-subscription">اشتراكات شهرية</a></li>
+                    <li><a href="index.html#services" class="footer-service-ride">طلب رحلة</a></li>
+                    <li><a href="index.html#services" class="footer-service-delivery">توصيل الطلبات</a></li>
+                    <li><a href="index.html#services" class="footer-service-shuttle">النقل الترددي</a></li>
+                    <li><a href="index.html#services" class="footer-service-subscription">اشتراكات شهرية</a></li>
                 </ul>
             </div>
 
@@ -1338,8 +933,8 @@
                 <span class="footer-rights">جميع الحقوق محفوظة</span>
             </div>
             <div class="flex items-center gap-6 text-sm footer-links">
-                <a href="#privacy" class="footer-privacy">سياسة الخصوصية</a>
-                <a href="#privacy" class="footer-terms">الأحكام والشروط</a>
+                <a href="index.html#privacy" class="footer-privacy">سياسة الخصوصية</a>
+                <a href="index.html#privacy" class="footer-terms">الأحكام والشروط</a>
                 <span class="text-[10px] px-3 py-1 bg-white/5 rounded-full border border-white/5 text-gray-400">
                     <i class="fa-solid fa-heart text-emerald-400 ml-1"></i> <span class="footer-made">صنع في السعودية</span>
                 </span>
