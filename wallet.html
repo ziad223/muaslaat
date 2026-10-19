@@ -1,0 +1,1761 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>المحفظة الرقمية الذكية | مواصلات - Mowasalat Wallet</title>
+    <meta name="title" content="المحفظة الرقمية الذكية | مواصلات - Mowasalat Wallet" />
+    <meta
+      name="description"
+      content="المحفظة الرقمية الذكية لمنصة مواصلات: شحن رصيد فوري عبر مدى وApple Pay، سحب آمن عبر نظام سريع STC Pay، ومتابعة فورية لكافة معاملاتك وإيصالاتك المالية المعتمدة."
+    />
+    <meta
+      name="keywords"
+      content="محفظة مواصلات, المحفظة الرقمية, شحن رصيد, مدى, Apple Pay, سحب بنكي, سريع, STC Pay, دفع إلكتروني"
+    />
+    <meta name="author" content="مواصلات" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/new-logo.jpeg" type="image/png" />
+    <link rel="apple-touch-icon" href="images/new-logo.jpeg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body.light-theme {
+        font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #f8fafc !important;
+        color: #0f172a;
+        min-height: 100vh;
+      }
+      .wallet-gradient-mesh {
+        background: radial-gradient(circle at 10% 10%, rgba(26, 74, 138, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 45%),
+                    radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                    #f8fafc;
+      }
+      /* Professional Titanium Smart Card - stays high contrast luxury */
+      .titanium-card {
+        background: linear-gradient(135deg, #0e1e38 0%, #162f55 50%, #0a1628 100%);
+        box-shadow: 0 20px 40px -10px rgba(14, 30, 56, 0.35),
+                    0 0 0 1px rgba(255, 255, 255, 0.1),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .titanium-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -30%;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .titanium-card::after {
+        content: '';
+        position: absolute;
+        bottom: -40%;
+        left: -20%;
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      /* Clean White Cards & Harmonious Light System */
+      body.light-theme .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.03) !important;
+      }
+      body.light-theme .glass-card:hover {
+        border-color: #cbd5e1 !important;
+        box-shadow: 0 14px 30px -5px rgba(15, 23, 42, 0.08) !important;
+      }
+
+      /* Text Colors for Light Theme */
+      body.light-theme h1,
+      body.light-theme h2,
+      body.light-theme h3,
+      body.light-theme h4,
+      body.light-theme .text-white:not(.titanium-card *):not(.btn *):not(button[class*="bg-"]):not(.modal-card *) {
+        color: #0f172a !important;
+      }
+      body.light-theme .text-slate-300:not(.titanium-card *):not(.modal-card *),
+      body.light-theme .text-slate-400:not(.titanium-card *):not(.modal-card *) {
+        color: #475569 !important;
+      }
+      body.light-theme .border-white\/10:not(.titanium-card *):not(.modal-card *),
+      body.light-theme .border-white\/15:not(.titanium-card *):not(.modal-card *) {
+        border-color: #e2e8f0 !important;
+      }
+
+      /* Quick Amount and Action Buttons in Light Theme */
+      body.light-theme .wchip-btn,
+      body.light-theme .wchip-wth {
+        background: #f1f5f9 !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #1e293b !important;
+      }
+      body.light-theme .wchip-btn:hover,
+      body.light-theme .wchip-wth:hover {
+        background: #e2e8f0 !important;
+        border-color: #cbd5e1 !important;
+      }
+
+      /* Input Fields in Light Theme */
+      body.light-theme .portal-input,
+      body.light-theme input[type="number"],
+      body.light-theme input[type="text"],
+      body.light-theme input[type="tel"] {
+        background: #f8fafc !important;
+        border: 2px solid #e2e8f0 !important;
+        color: #0f172a !important;
+      }
+      body.light-theme .portal-input:focus,
+      body.light-theme input:focus {
+        background: #ffffff !important;
+        border-color: #2563eb !important;
+      }
+
+      /* Radio Cards (Mada / Apple Pay / Cards / SARIE / STC Pay) */
+      body.light-theme .bg-\[\#0c1a33\],
+      body.light-theme .bg-\[\#0b172e\],
+      body.light-theme .bg-\[\#09152b\] {
+        background: #f8fafc !important;
+        border-color: #e2e8f0 !important;
+        color: #0f172a !important;
+      }
+      body.light-theme label.border-white\/15 {
+        border-color: #e2e8f0 !important;
+      }
+      body.light-theme label.border-white\/15:hover {
+        border-color: #94a3b8 !important;
+        background: #f1f5f9 !important;
+      }
+      body.light-theme label span.text-white {
+        color: #0f172a !important;
+      }
+
+      /* Statement Filter & Transactions in Light Theme */
+      body.light-theme .tx-filter-btn {
+        color: #475569 !important;
+      }
+      body.light-theme .tx-filter-btn.bg-blue-600 {
+        color: #ffffff !important;
+      }
+
+      /* Transaction history item in Light Theme */
+      body.light-theme #wallet-history-list > div {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 2px 6px -1px rgba(0,0,0,0.03) !important;
+      }
+      body.light-theme #wallet-history-list > div:hover {
+        border-color: #cbd5e1 !important;
+        box-shadow: 0 6px 16px -2px rgba(0,0,0,0.06) !important;
+      }
+
+      /* Notice and info boxes */
+      body.light-theme .bg-white\/5:not(.titanium-card *):not(.modal-card *):not(#navbar *) {
+        background: #f1f5f9 !important;
+        border-color: #e2e8f0 !important;
+      }
+
+      /* Navbar Styling for Light Theme */
+      body.light-theme #navbar {
+        background: rgba(255, 255, 255, 0.94) !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+      body.light-theme #navbar .nav-link {
+        color: #475569 !important;
+      }
+      body.light-theme #navbar .nav-link:hover,
+      body.light-theme #navbar .nav-link.active {
+        color: #1a4a8a !important;
+        background: rgba(26, 74, 138, 0.05) !important;
+      }
+      body.light-theme #navbar span.text-white {
+        color: #0f172a !important;
+      }
+
+      /* Auth Banner */
+      body.light-theme #wallet-auth-banner {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+        border-color: #bfdbfe !important;
+      }
+      body.light-theme #wallet-auth-banner p.text-white {
+        color: #1e3a8a !important;
+      }
+      body.light-theme #wallet-auth-banner p.text-slate-300 {
+        color: #1e40af !important;
+      }
+
+      .chip-gradient {
+        background: linear-gradient(135deg, #fcd34d 0%, #d97706 100%);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body class="light-theme wallet-gradient-mesh antialiased">
+    <!-- ============================================================ -->
+    <!-- NAVBAR -->
+    <!-- ============================================================ -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-[#071126]/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300"
+    >
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3">
+            <img
+              src="images/new-logo.jpeg"
+              alt="Mowasalat"
+              class="object-contain rounded-xl"
+              style="height: 52px; width: auto"
+            />
+            <div class="hidden sm:block">
+              <span class="text-lg font-black text-white tracking-wide block leading-tight">مـواصـلات</span>
+              <span class="text-[10px] text-sky-400 font-bold tracking-widest uppercase font-mono">Smart Mobility</span>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center gap-1 text-sm font-medium">
+            <a
+              href="index.html#home"
+              class="nav-link"
+              data-ar="الرئيسية"
+              data-en="Home"
+              >الرئيسية</a
+            >
+         
+           
+            <a
+              href="index.html#subscriptions"
+              class="nav-link"
+              data-ar="باقات المشاوير"
+              data-en="Ride Plans"
+              >باقات المشاوير</a
+            >
+            <a
+              href="index.html#special-offers"
+              class="nav-link"
+              data-ar="العروض الخاصة"
+              data-en="Special Offers"
+              >العروض</a
+            >
+            <a
+              href="team.html"
+              class="nav-link"
+              data-ar="فريق العمل"
+              data-en="Our Team"
+              >فريق العمل</a
+            >
+            <a
+              href="wallet.html"
+              class="nav-link active font-black text-sky-400"
+              data-ar="المحفظة الرقمية"
+              data-en="Smart Wallet"
+              >المحفظة الرقمية</a
+            >
+            <a
+              href="index.html#contact"
+              class="nav-link"
+              data-ar="اتصل بنا"
+              data-en="Contact"
+              >اتصل بنا</a
+            >
+          </div>
+
+          <!-- Right actions -->
+          <div class="flex items-center gap-3">
+            <!-- Language Toggle -->
+            <div class="lang-toggle hidden sm:flex">
+              <button id="lang-ar" class="active" data-lang="ar">عربي</button>
+              <button id="lang-en" data-lang="en">EN</button>
+            </div>
+
+            <!-- Auth / Login Btn Container (Auto-populated by portal-api.js) -->
+            <div
+              id="desktop-auth-container"
+              class="hidden md:flex items-center gap-2"
+            >
+              <button
+                onclick="showAuthModal('login')"
+                class="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-[#1a4a8a] !text-white rounded-2xl hover:bg-[#2a5a9a] transition-all shadow-lg shadow-blue-900/20"
+              >
+                <i class="fa-regular fa-user"></i>
+                <span
+                  class="nav-auth-btn"
+                  data-ar="تسجيل الدخول"
+                  data-en="Sign In"
+                  >تسجيل الدخول</span
+                >
+              </button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button
+              id="mobile-menu-btn"
+              class="lg:hidden w-11 h-11 flex items-center justify-center rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white"
+            >
+              <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-[#071126] border-b border-white/10">
+        <div class="px-6 py-5 flex flex-col gap-2 text-sm">
+          <a
+            href="index.html#home"
+            class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-bold"
+            data-ar="الرئيسية"
+            data-en="Home"
+            >الرئيسية</a
+          >
+          <a
+            href="index.html#subscriptions"
+            class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-bold"
+            data-ar="باقات المشاوير"
+            data-en="Ride Plans"
+            >باقات المشاوير</a
+          >
+          <a
+            href="wallet.html"
+            class="mobile-link px-4 py-2.5 rounded-xl bg-blue-600/20 border border-blue-500/40 text-sky-300 font-black"
+            data-ar="المحفظة الرقمية"
+            data-en="Smart Wallet"
+            >المحفظة الرقمية</a
+          >
+          <a
+            href="team.html"
+            class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-bold"
+            data-ar="فريق العمل"
+            data-en="Our Team"
+            >فريق العمل</a
+          >
+          <a
+            href="index.html#contact"
+            class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-bold"
+            data-ar="اتصل بنا"
+            data-en="Contact"
+            >اتصل بنا</a
+          >
+          <!-- Mobile Auth Slot -->
+          <div id="mobile-auth-container" class="pt-2">
+            <button
+              onclick="showAuthModal('login'); document.getElementById('mobile-menu').classList.add('hidden')"
+              class="w-full flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold bg-[#1a4a8a] text-white rounded-2xl"
+            >
+              <i class="fa-regular fa-user"></i>
+              <span class="nav-auth-btn" data-ar="تسجيل الدخول" data-en="Sign In">تسجيل الدخول</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- ============================================================ -->
+    <!-- MAIN WALLET CONTAINER -->
+    <!-- ============================================================ -->
+    <main class="pt-28 pb-20 px-4 sm:px-6 lg:px-10 max-w-screen-xl mx-auto space-y-10">
+      
+      <!-- Top Breadcrumbs & Page Header -->
+      <section class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 pb-2 border-b border-white/10">
+        <div>
+          <!-- Breadcrumb -->
+          <div class="flex items-center gap-2 text-xs font-semibold text-sky-300/80 mb-2">
+            <a href="index.html" class="hover:text-white transition-colors" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-[9px] text-slate-500"></i>
+            <span class="text-white" data-ar="لوحة التحكم المالية" data-en="Financial Dashboard">لوحة التحكم المالية</span>
+            <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-[9px] text-slate-500"></i>
+            <span class="text-sky-400 font-bold" data-ar="المحفظة الرقمية الذكية" data-en="Smart Digital Wallet">المحفظة الرقمية الذكية</span>
+          </div>
+          <!-- Title -->
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight flex items-center gap-3">
+            <span data-ar="المحفظة الرقمية الذكية" data-en="Smart Digital Wallet">المحفظة الرقمية الذكية</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-sans flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span data-ar="نظام دفع إلكتروني معتمد" data-en="Certified Payment Gateway">نظام دفع إلكتروني معتمد</span>
+            </span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed" data-ar="محطتك المالية الموحدة لإدارة الرصيد، شحن المحفظة فورياً عبر البطاقات البنكية ومدى وApple Pay، وسحب أرباحك ورصيدك مباشرة لحسابك البنكي عبر شبكة سريع وSTC Pay." data-en="Your unified financial hub to manage balance, instantly top up via bank cards, Mada & Apple Pay, and withdraw your funds directly to your bank account via SARIE & STC Pay.">
+            محطتك المالية الموحدة لإدارة الرصيد، شحن المحفظة فورياً عبر البطاقات البنكية ومدى وApple Pay، وسحب أرباحك ورصيدك مباشرة لحسابك البنكي عبر شبكة سريع وSTC Pay.
+          </p>
+        </div>
+
+        <!-- Quick Top Actions -->
+        <div class="flex items-center gap-2.5">
+          <a
+            href="index.html#subscriptions"
+            class="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-all shadow-sm"
+          >
+            <i class="fa-solid fa-ticket text-amber-500"></i>
+            <span data-ar="تصفح باقات المشاوير" data-en="Browse Ride Plans">تصفح باقات المشاوير</span>
+          </a>
+          <button
+            type="button"
+            onclick="WalletService.syncUI(); renderWalletHistory(); showToast(localStorage.getItem('mowasalat_lang') === 'en' ? 'Wallet balance & statement refreshed 🔄' : 'تم تحديث بيانات المحفظة وكشف الحساب مباشرة 🔄', 'info');"
+            class="px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 font-bold text-xs flex items-center gap-2 transition-all shadow-sm cursor-pointer"
+          >
+            <i class="fa-solid fa-arrows-rotate text-blue-600"></i>
+            <span data-ar="تحديث الرصيد" data-en="Refresh Balance">تحديث الرصيد</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- AUTHENTICATION STATE BANNER (DYNAMICALLY MANAGED) -->
+      <!-- ============================================================ -->
+      <div id="wallet-auth-banner" class="hidden p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900/40 via-indigo-900/30 to-blue-900/20 border border-blue-400/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs shadow-xl backdrop-blur-xl">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0 border border-blue-400/30">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <div>
+            <p class="font-bold text-white text-sm" data-ar="أنت تتصفح المحفظة الآن في وضع المعاينة" data-en="You are browsing the wallet in preview mode">أنت تتصفح المحفظة الآن في وضع المعاينة</p>
+            <p class="text-slate-300 text-xs mt-0.5" data-ar="قم بتسجيل الدخول لربط حسابك السحابي، الاطلاع على رصيدك الفعلي، وتنفيذ عمليات الشحن والسحب المباشرة." data-en="Sign in to link your cloud account, view your live balance, and perform instant top-ups and withdrawals.">قم بتسجيل الدخول لربط حسابك السحابي، الاطلاع على رصيدك الفعلي، وتنفيذ عمليات الشحن والسحب المباشرة.</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          onclick="showAuthModal('login')"
+          class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-xs shadow-md transition-all whitespace-nowrap cursor-pointer flex items-center gap-2"
+        >
+          <i class="fa-solid fa-arrow-right-to-bracket rtl:rotate-0 ltr:rotate-180"></i>
+          <span data-ar="تسجيل الدخول / إنشاء حساب" data-en="Sign In / Register">تسجيل الدخول / إنشاء حساب</span>
+        </button>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- HERO VIRTUAL SMART CARD & FINANCIAL METRICS -->
+      <!-- ============================================================ -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- Virtual Titanium Smart Card (Col 7) -->
+        <div class="lg:col-span-7 titanium-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between text-white relative z-10 min-h-[290px] border border-white/15">
+          <!-- Card Top Row -->
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-xl shadow-lg">
+                <i class="fa-solid fa-wallet text-sky-400"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-sky-200 tracking-wider block">MOWASALAT SMART WALLET</span>
+                <span class="text-[11px] text-slate-400 font-medium" data-ar="البطاقة البلاتينية الرقمية المشفرة" data-en="Encrypted Digital Platinum Card">البطاقة البلاتينية الرقمية المشفرة</span>
+              </div>
+            </div>
+            <!-- Contactless & Chip Icon -->
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-wifi rotate-90 text-xl text-sky-300/80"></i>
+              <div class="w-10 h-8 rounded-lg chip-gradient border border-amber-300/60 shadow-md flex items-center justify-center">
+                <div class="w-6 h-5 border border-amber-900/40 rounded grid grid-cols-2 gap-0.5 p-0.5">
+                  <div class="border-r border-amber-900/40"></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Center: Large Live Balance -->
+          <div class="my-6">
+            <span class="text-xs font-bold text-slate-300 uppercase tracking-widest block mb-1" data-ar="الرصيد المتاح حالياً (Available Balance)" data-en="Available Balance">الرصيد المتاح حالياً (Available Balance)</span>
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <span id="wallet-page-balance" class="text-4xl sm:text-5xl lg:text-6xl font-black font-mono tracking-tight text-white drop-shadow-md">
+                0.00
+              </span>
+              <span class="text-xl sm:text-2xl font-black text-sky-300 font-sans" data-ar="ريال سعودي" data-en="SAR">
+                ريال سعودي
+              </span>
+            </div>
+          </div>
+
+          <!-- Card Bottom Row: User Name & Virtual Account Number -->
+          <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3 text-xs">
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium" data-ar="صاحب الحساب المعتمد" data-en="Authorized Account Holder">صاحب الحساب المعتمد</span>
+              <span id="wallet-page-cardholder-name" class="font-bold text-white text-sm sm:text-base tracking-wide flex items-center gap-1.5 mt-0.5">
+                <span id="wallet-card-user-name" data-ar="مشترك مواصلات الموثق" data-en="Verified Mowasalat Member">مشترك مواصلات الموثق</span>
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs" title="حساب موثق"></i>
+              </span>
+            </div>
+            <div class="text-right sm:text-left font-mono" dir="ltr">
+              <span class="text-[10px] text-slate-400 block font-sans text-right" data-ar="رقم المحفظة الافتراضي" data-en="Virtual Wallet ID">رقم المحفظة الافتراضي</span>
+              <span id="wallet-card-acc-no" class="font-bold text-sky-200 tracking-widest text-xs sm:text-sm">SA 88 4000 **** **** 8421</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-400/30" data-ar="PCI-DSS نشطة" data-en="PCI-DSS Active">
+                PCI-DSS نشطة
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Quick Metric Cards (Col 5) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+          
+          <!-- Metric 1: Total Top-ups -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-4 transition-all hover:translate-y-[-2px]">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl shrink-0 shadow">
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-300 block" data-ar="إجمالي عمليات الشحن والإيداع" data-en="Total Top-ups & Deposits">إجمالي عمليات الشحن والإيداع</span>
+                <span id="wallet-page-total-topup" class="text-xl sm:text-2xl font-black font-mono text-emerald-400 block mt-0.5">
+                  0.00 ر.س
+                </span>
+              </div>
+            </div>
+            <span class="text-[11px] font-bold text-emerald-400/90 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 whitespace-nowrap" data-ar="إيداع فوري" data-en="Instant Deposit">
+              إيداع فوري
+            </span>
+          </div>
+
+          <!-- Metric 2: Total Withdrawals -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-4 transition-all hover:translate-y-[-2px]">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl shrink-0 shadow">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-300 block" data-ar="إجمالي المبالغ المسحوبة" data-en="Total Withdrawals">إجمالي المبالغ المسحوبة</span>
+                <span id="wallet-page-total-withdraw" class="text-xl sm:text-2xl font-black font-mono text-amber-300 block mt-0.5">
+                  0.00 ر.س
+                </span>
+              </div>
+            </div>
+            <span class="text-[11px] font-bold text-amber-400/90 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20 whitespace-nowrap" data-ar="نظام سريع" data-en="SARIE System">
+              نظام سريع
+            </span>
+          </div>
+
+          <!-- Metric 3: Total Transactions -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-4 transition-all hover:translate-y-[-2px]">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/15 text-sky-400 border border-blue-500/30 flex items-center justify-center text-xl shrink-0 shadow">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-300 block" data-ar="إجمالي المعاملات الموثقة" data-en="Total Verified Transactions">إجمالي المعاملات الموثقة</span>
+                <span id="wallet-page-total-txs" class="text-xl sm:text-2xl font-black font-mono text-sky-300 block mt-0.5">
+                  0
+                </span>
+              </div>
+            </div>
+            <span class="text-[11px] font-bold text-sky-400/90 bg-blue-500/10 px-2.5 py-1 rounded-lg border border-blue-500/20 whitespace-nowrap" data-ar="سجل نشط" data-en="Active Log">
+              سجل نشط
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 2-COLUMN FINANCIAL ACTION DESK (TOP-UP & WITHDRAW) -->
+      <!-- ============================================================ -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        
+        <!-- ========================================================= -->
+        <!-- COLUMN 1: TOP-UP / RECHARGE WALLET (شحن المحفظة) -->
+        <!-- ========================================================= -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-500/20 relative">
+          <!-- Header -->
+          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center text-lg shadow-lg">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+              <div>
+                <h2 class="text-lg sm:text-xl font-black text-white" data-ar="شحن رصيد المحفظة" data-en="Recharge Wallet Balance">شحن رصيد المحفظة</h2>
+                <p class="text-xs text-slate-400" data-ar="دفع إلكتروني فوري وآمن بنسبة 100%" data-en="Instant & 100% Secure Online Payment">دفع إلكتروني فوري وآمن بنسبة 100%</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30" data-ar="رسوم 0% مجاناً" data-en="0% Fees Free">
+              رسوم 0% مجاناً
+            </span>
+          </div>
+
+          <!-- Quick Select Amounts -->
+          <div class="space-y-2">
+            <label class="block text-xs font-black text-slate-300 uppercase tracking-wider" data-ar="اختر مبلغ الشحن السريع" data-en="Select Quick Top-up Amount">
+              اختر مبلغ الشحن السريع
+            </label>
+            <div class="grid grid-cols-5 gap-2">
+              <button
+                type="button"
+                onclick="setTopUpAmount(50)"
+                class="wchip-btn py-2.5 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+              >
+                50 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+              </button>
+              <button
+                type="button"
+                onclick="setTopUpAmount(100)"
+                class="wchip-btn py-2.5 rounded-xl text-xs font-bold bg-blue-600/40 border border-blue-400 text-white transition-all cursor-pointer"
+              >
+                100 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+              </button>
+              <button
+                type="button"
+                onclick="setTopUpAmount(200)"
+                class="wchip-btn py-2.5 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+              >
+                200 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+              </button>
+              <button
+                type="button"
+                onclick="setTopUpAmount(500)"
+                class="wchip-btn py-2.5 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+              >
+                500 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+              </button>
+              <button
+                type="button"
+                onclick="setTopUpAmount(1000)"
+                class="wchip-btn py-2.5 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+              >
+                1000 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Custom Amount Input -->
+          <div class="space-y-2">
+            <label for="wallet-topup-amount" class="block text-xs font-black text-slate-300 uppercase tracking-wider" data-ar="أو أدخل مبلغاً مخصصاً (بالريال السعودي)" data-en="Or enter a custom amount (SAR)">
+              أو أدخل مبلغاً مخصصاً (بالريال السعودي)
+            </label>
+            <div class="relative">
+              <input
+                type="number"
+                id="wallet-topup-amount"
+                min="10"
+                step="5"
+                value="100"
+                class="portal-input w-full px-4 py-3 text-lg font-black font-mono text-white bg-[#0c1a33] border-2 border-white/15 rounded-2xl focus:border-emerald-400 focus:outline-none transition-all shadow-inner rtl:pl-20 ltr:pr-20"
+                placeholder="100"
+              />
+              <span class="absolute inset-y-0 rtl:left-0 ltr:right-0 flex items-center rtl:pl-4 ltr:pr-4 text-xs font-bold text-sky-300 pointer-events-none" data-ar="ريال سعودي" data-en="SAR">
+                ريال سعودي
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-400" data-ar="الحد الأدنى للشحن: 10.00 ر.س • يتم إيداع المبلغ فور إتمام الدفع" data-en="Minimum top-up: 10.00 SAR • Funds are credited immediately">الحد الأدنى للشحن: 10.00 ر.س • يتم إيداع المبلغ فور إتمام الدفع</p>
+          </div>
+
+          <!-- Payment Method Radios (Stripe Gateway) -->
+          <div class="space-y-2.5">
+            <label class="block text-xs font-black text-slate-300 uppercase tracking-wider" data-ar="وسيلة الدفع الإلكتروني المعتمدة (عبر بوابة Stripe)" data-en="Certified Payment Method (via Stripe Gateway)">
+              وسيلة الدفع الإلكتروني المعتمدة (عبر بوابة Stripe)
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              
+              <!-- Mada -->
+              <label class="relative flex items-center gap-3 p-3 rounded-2xl bg-[#0c1a33] border border-white/15 hover:border-emerald-400/50 cursor-pointer transition-all">
+                <input
+                  type="radio"
+                  name="wallet-pay-method"
+                  value="mada"
+                  checked
+                  class="accent-emerald-500 w-4 h-4"
+                />
+                <div>
+                  <span class="block text-xs font-bold text-white" data-ar="بطاقة مدى" data-en="Mada Card">بطاقة مدى</span>
+                  <span class="block text-[10px] text-slate-400">Mada Debit</span>
+                </div>
+              </label>
+
+              <!-- Apple Pay -->
+              <label class="relative flex items-center gap-3 p-3 rounded-2xl bg-[#0c1a33] border border-white/15 hover:border-emerald-400/50 cursor-pointer transition-all">
+                <input
+                  type="radio"
+                  name="wallet-pay-method"
+                  value="apple"
+                  class="accent-emerald-500 w-4 h-4"
+                />
+                <div>
+                  <span class="block text-xs font-bold text-white">Apple Pay</span>
+                  <span class="block text-[10px] text-slate-400" data-ar="دفع بلمسة واحدة" data-en="One-touch payment">دفع بلمسة واحدة</span>
+                </div>
+              </label>
+
+              <!-- Cards (Visa / MC) -->
+              <label class="relative flex items-center gap-3 p-3 rounded-2xl bg-[#0c1a33] border border-white/15 hover:border-emerald-400/50 cursor-pointer transition-all">
+                <input
+                  type="radio"
+                  name="wallet-pay-method"
+                  value="card"
+                  class="accent-emerald-500 w-4 h-4"
+                />
+                <div>
+                  <span class="block text-xs font-bold text-white" data-ar="بطاقة بنكية" data-en="Bank Card">بطاقة بنكية</span>
+                  <span class="block text-[10px] text-slate-400">Visa / Mastercard</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Security note box -->
+          <div class="p-3.5 rounded-2xl bg-gradient-to-r from-blue-900/30 to-emerald-900/20 border border-blue-400/20 flex items-start gap-3 text-xs text-slate-300">
+            <i class="fa-solid fa-shield-halved text-emerald-400 text-base mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-bold text-white" data-ar="تشفير وأمان بنكي متقدم" data-en="Advanced Banking Encryption & Security">تشفير وأمان بنكي متقدم</p>
+              <p class="text-[11px] text-slate-300 leading-relaxed mt-0.5" data-ar="تتم جميع المعاملات عبر بوابة Stripe العالمية المعتمدة والمتوافقة مع متطلبات البنك المركزي السعودي (ساما) ومعايير PCI-DSS." data-en="All transactions are processed via certified global Stripe Gateway, fully compliant with Saudi Central Bank (SAMA) regulations and PCI-DSS standards.">
+                تتم جميع المعاملات عبر بوابة Stripe العالمية المعتمدة والمتوافقة مع متطلبات البنك المركزي السعودي (ساما) ومعايير PCI-DSS.
+              </p>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="button"
+            id="btn-wallet-topup-submit"
+            onclick="executeWalletRecharge()"
+            class="w-full py-4 rounded-2xl font-black bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-400 text-white shadow-xl shadow-emerald-900/40 transition-all hover:scale-[1.01] flex items-center justify-center gap-2 text-sm cursor-pointer"
+          >
+            <i class="fa-solid fa-lock text-emerald-200"></i>
+            <span data-ar="متابعة لشحن المحفظة والدفع الآمن" data-en="Proceed to Secure Wallet Top-up">متابعة لشحن المحفظة والدفع الآمن</span>
+          </button>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- COLUMN 2: WITHDRAW FUNDS / PAYOUT (سحب الرصيد) -->
+        <!-- ========================================================= -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-amber-500/20 relative">
+          <!-- Header -->
+          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-500 text-slate-950 flex items-center justify-center text-lg shadow-lg font-black">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+              <div>
+                <h2 class="text-lg sm:text-xl font-black text-white" data-ar="سحب الرصيد إلى حسابك" data-en="Withdraw Balance to Your Account">سحب الرصيد إلى حسابك</h2>
+                <p class="text-xs text-slate-400" data-ar="تحويل فوري عبر سريع SARIE أو STC Pay" data-en="Instant Transfer via SARIE or STC Pay">تحويل فوري عبر سريع SARIE أو STC Pay</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30" data-ar="تحويل فوري" data-en="Instant Transfer">
+              تحويل فوري
+            </span>
+          </div>
+
+          <!-- Multi-Step Withdrawal Wizard -->
+          <!-- STEP 1: Enter Amount -->
+          <div id="withdraw-step-1" class="space-y-5">
+            <!-- Shortcut chips -->
+            <div class="space-y-2">
+              <label class="block text-xs font-black text-slate-300 uppercase tracking-wider" data-ar="حدد المبلغ المطلوب سحبه" data-en="Select Amount to Withdraw">
+                حدد المبلغ المطلوب سحبه
+              </label>
+              <div class="grid grid-cols-4 gap-2">
+                <button
+                  type="button"
+                  onclick="setWithdrawAmount(50)"
+                  class="wchip-wth py-2 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+                >
+                  50 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+                </button>
+                <button
+                  type="button"
+                  onclick="setWithdrawAmount(100)"
+                  class="wchip-wth py-2 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+                >
+                  100 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+                </button>
+                <button
+                  type="button"
+                  onclick="setWithdrawAmount(200)"
+                  class="wchip-wth py-2 rounded-xl text-xs font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all cursor-pointer"
+                >
+                  200 <span data-ar="ر.س" data-en="SAR">ر.س</span>
+                </button>
+                <button
+                  type="button"
+                  onclick="setWithdrawAmount('all')"
+                  class="wchip-wth py-2 rounded-xl text-xs font-bold bg-amber-500/20 border border-amber-400 text-amber-300 transition-all cursor-pointer"
+                >
+                  <span data-ar="كامل الرصيد" data-en="Full Balance">كامل الرصيد</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Amount Input -->
+            <div class="space-y-2">
+              <label for="wallet-withdraw-amount" class="block text-xs font-black text-slate-300 uppercase tracking-wider" data-ar="مبلغ السحب (بالريال السعودي)" data-en="Withdrawal Amount (SAR)">
+                مبلغ السحب (بالريال السعودي)
+              </label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="wallet-withdraw-amount"
+                  min="10"
+                  step="5"
+                  value="50"
+                  class="portal-input w-full px-4 py-3 text-lg font-black font-mono text-white bg-[#0c1a33] border-2 border-white/15 rounded-2xl focus:border-amber-400 focus:outline-none transition-all shadow-inner rtl:pl-20 ltr:pr-20"
+                  placeholder="50"
+                />
+                <span class="absolute inset-y-0 rtl:left-0 ltr:right-0 flex items-center rtl:pl-4 ltr:pr-4 text-xs font-bold text-amber-300 pointer-events-none" data-ar="ريال سعودي" data-en="SAR">
+                  ريال سعودي
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-400" data-ar="الحد الأدنى للسحب الفوري: 10.00 ر.س • لا توجد أي رسوم إدارية" data-en="Minimum withdrawal: 10.00 SAR • Zero administrative fees">الحد الأدنى للسحب الفوري: 10.00 ر.س • لا توجد أي رسوم إدارية</p>
+            </div>
+
+            <!-- Notice -->
+            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300 space-y-1">
+              <div class="flex items-center gap-2 font-bold text-white">
+                <i class="fa-solid fa-bolt text-amber-400"></i>
+                <span data-ar="سرعة الإيداع في حسابك" data-en="Deposit Speed into Your Account">سرعة الإيداع في حسابك</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-relaxed" data-ar="يصل المبلغ لحسابك البنكي خلال دقائق معدودة فور تأكيد الطلب عبر نظام التحويل السريع (SARIE) على مدار 24 ساعة طوال أيام الأسبوع." data-en="Funds reach your bank account within minutes upon confirmation via SARIE instant payment system 24/7.">
+                يصل المبلغ لحسابك البنكي خلال دقائق معدودة فور تأكيد الطلب عبر نظام التحويل السريع (SARIE) على مدار 24 ساعة طوال أيام الأسبوع.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onclick="proceedWithdrawStep2()"
+              class="w-full py-4 rounded-2xl font-black bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 shadow-xl transition-all hover:scale-[1.01] flex items-center justify-center gap-2 text-sm cursor-pointer"
+            >
+              <span data-ar="متابعة لتحديد الحساب البنكي" data-en="Continue to Bank Account Details">متابعة لتحديد الحساب البنكي</span>
+              <i class="fa-solid fa-arrow-left rtl:rotate-0 ltr:rotate-180"></i>
+            </button>
+          </div>
+
+          <!-- STEP 2: Channel Details (IBAN or STC Pay) -->
+          <div id="withdraw-step-2" class="hidden space-y-4">
+            <!-- Channel Selector -->
+            <div class="grid grid-cols-2 gap-2">
+              <label class="p-3 rounded-2xl bg-[#0c1a33] border border-white/15 hover:border-amber-400/50 cursor-pointer flex items-center gap-2 text-xs font-bold text-white">
+                <input
+                  type="radio"
+                  name="withdraw-channel"
+                  value="iban"
+                  checked
+                  onchange="toggleWithdrawChannel('iban')"
+                  class="accent-amber-400"
+                />
+                <span data-ar="آيبان بنكي (سريع)" data-en="Bank IBAN (SARIE)">آيبان بنكي (سريع)</span>
+              </label>
+              <label class="p-3 rounded-2xl bg-[#0c1a33] border border-white/15 hover:border-amber-400/50 cursor-pointer flex items-center gap-2 text-xs font-bold text-white">
+                <input
+                  type="radio"
+                  name="withdraw-channel"
+                  value="stc_pay"
+                  onchange="toggleWithdrawChannel('stc_pay')"
+                  class="accent-amber-400"
+                />
+                <span data-ar="محفظة STC Pay" data-en="STC Pay Wallet">محفظة STC Pay</span>
+              </label>
+            </div>
+
+            <!-- IBAN Inputs -->
+            <div id="wth-iban-group" class="space-y-3">
+              <div>
+                <label for="wth-iban-input" class="block mb-1 text-xs font-black text-slate-300 uppercase" data-ar="رقم الآيبان السعودي (IBAN)" data-en="Saudi IBAN Number">
+                  رقم الآيبان السعودي (IBAN)
+                </label>
+                <input
+                  type="text"
+                  id="wth-iban-input"
+                  maxlength="24"
+                  value="SA"
+                  oninput="handleIbanInput(this)"
+                  placeholder="SA0000000000000000000000"
+                  class="portal-input w-full px-4 py-2.5 text-sm font-mono text-white bg-[#0c1a33] border-2 border-white/15 rounded-xl uppercase tracking-wider focus:border-amber-400 focus:outline-none"
+                  dir="ltr"
+                />
+                <!-- Detected Bank Badge -->
+                <div id="wth-detected-bank" class="mt-2 p-2.5 rounded-xl bg-blue-500/10 border border-blue-400/30 flex items-center gap-2 text-xs font-bold text-sky-300">
+                  <i class="fa-solid fa-landmark text-sky-400"></i>
+                  <span id="wth-detected-bank-name" data-ar="يرجى إكمال كتابة رقم الآيبان للتعرف على البنك" data-en="Please complete IBAN to detect bank">يرجى إكمال كتابة رقم الآيبان للتعرف على البنك</span>
+                </div>
+              </div>
+
+              <div>
+                <label for="wth-beneficiary-name" class="block mb-1 text-xs font-black text-slate-300 uppercase" data-ar="اسم المستفيد الرباعي (المطابق لبطاقة البنك)" data-en="Beneficiary Full Name (as on Bank Card)">
+                  اسم المستفيد الرباعي (المطابق لبطاقة البنك)
+                </label>
+                <input
+                  type="text"
+                  id="wth-beneficiary-name"
+                  placeholder="مثال: زياد عبدالله أحمد"
+                  data-ar="مثال: زياد عبدالله أحمد"
+                  data-en="e.g., Ziad Abdalla Ahmed"
+                  class="portal-input w-full px-4 py-2.5 text-sm text-white bg-[#0c1a33] border border-white/15 rounded-xl focus:border-amber-400 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <!-- STC Pay Inputs -->
+            <div id="wth-stc-group" class="hidden space-y-3">
+              <div>
+                <label for="wth-stc-phone" class="block mb-1 text-xs font-black text-slate-300 uppercase" data-ar="رقم جوال STC Pay المسجل" data-en="Registered STC Pay Mobile Number">
+                  رقم جوال STC Pay المسجل
+                </label>
+                <input
+                  type="tel"
+                  id="wth-stc-phone"
+                  maxlength="10"
+                  placeholder="05xxxxxxxx"
+                  class="portal-input w-full px-4 py-2.5 text-sm font-mono text-white bg-[#0c1a33] border border-white/15 rounded-xl focus:border-amber-400 focus:outline-none"
+                  dir="ltr"
+                />
+              </div>
+              <div>
+                <label for="wth-stc-name" class="block mb-1 text-xs font-black text-slate-300 uppercase" data-ar="اسم صاحب محفظة STC Pay" data-en="STC Pay Account Holder Name">
+                  اسم صاحب محفظة STC Pay
+                </label>
+                <input
+                  type="text"
+                  id="wth-stc-name"
+                  placeholder="الاسم المسجل في المحفظة"
+                  data-ar="الاسم المسجل في المحفظة"
+                  data-en="Registered Name in Wallet"
+                  class="portal-input w-full px-4 py-2.5 text-sm text-white bg-[#0c1a33] border border-white/15 rounded-xl focus:border-amber-400 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <!-- Step 2 Navigation -->
+            <div class="flex gap-2.5 pt-1">
+              <button
+                type="button"
+                onclick="backWithdrawStep1()"
+                class="w-1/3 py-3 rounded-xl font-bold bg-white/10 hover:bg-white/20 text-white transition-all text-xs cursor-pointer"
+              >
+                <span data-ar="رجوع" data-en="Back">رجوع</span>
+              </button>
+              <button
+                type="button"
+                onclick="proceedWithdrawStep3()"
+                class="flex-1 py-3 rounded-xl font-black bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 text-slate-950 shadow-xl transition-all text-xs cursor-pointer"
+              >
+                <span data-ar="مراجعة وتأكيد العملية" data-en="Review & Confirm">مراجعة وتأكيد العملية</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Review and Finalize -->
+          <div id="withdraw-step-3" class="hidden space-y-4">
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#0b172e] border border-white/15 space-y-3 text-xs">
+              <div class="flex justify-between items-center pb-2.5 border-b border-white/10">
+                <span class="text-slate-300" data-ar="المبلغ المراد سحبه:" data-en="Withdrawal Amount:">المبلغ المراد سحبه:</span>
+                <span id="wth-conf-amount" class="font-bold text-white font-mono text-sm">0.00 ر.س</span>
+              </div>
+              <div class="flex justify-between items-center pb-2.5 border-b border-white/10">
+                <span class="text-slate-300" data-ar="رسوم التحويل الفوري (SARIE):" data-en="SARIE Transfer Fees:">رسوم التحويل الفوري (SARIE):</span>
+                <span class="font-bold text-emerald-400" data-ar="0.00 ر.س (مجاني)" data-en="0.00 SAR (Free)">0.00 ر.س (مجاني)</span>
+              </div>
+              <div class="flex justify-between items-center pb-2.5 border-b border-white/10">
+                <span class="text-slate-300" data-ar="الوجهة المستلمة:" data-en="Destination:">الوجهة المستلمة:</span>
+                <span id="wth-conf-dest" class="font-bold text-sky-300">مصرف الراجحي</span>
+              </div>
+              <div class="flex justify-between items-center pb-2.5 border-b border-white/10">
+                <span class="text-slate-300" data-ar="اسم المستفيد:" data-en="Beneficiary Name:">اسم المستفيد:</span>
+                <span id="wth-conf-name" class="font-bold text-white">عميل مواصلات</span>
+              </div>
+              <div class="flex justify-between items-center pt-1 text-sm font-black">
+                <span class="text-amber-400" data-ar="صافي الحوالة المستلمة:" data-en="Net Transfer Amount:">صافي الحوالة المستلمة:</span>
+                <span id="wth-conf-net" class="text-amber-400 font-mono text-base">0.00 ر.س</span>
+              </div>
+            </div>
+
+            <!-- Step 3 Navigation -->
+            <div class="flex gap-2.5">
+              <button
+                type="button"
+                onclick="backWithdrawStep2()"
+                class="w-1/3 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/20 text-white transition-all text-xs cursor-pointer"
+              >
+                <span data-ar="تعديل البيانات" data-en="Edit Details">تعديل البيانات</span>
+              </button>
+              <button
+                type="button"
+                onclick="executeFinalizeWithdraw()"
+                id="btn-finalize-withdraw"
+                class="flex-1 py-3.5 rounded-xl font-black bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 text-slate-950 shadow-xl transition-all text-sm flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <i class="fa-solid fa-check"></i>
+                <span data-ar="تأكيد السحب والتحويل الآن" data-en="Confirm Withdrawal & Transfer">تأكيد السحب والتحويل الآن</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- FULL STATEMENT & TRANSACTION HISTORY SECTION -->
+      <!-- ============================================================ -->
+      <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-white/10">
+        
+        <!-- Section Header & Filter Tabs -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
+              <i class="fa-solid fa-clock-rotate-left text-sky-400"></i>
+              <span data-ar="كشف الحساب وسجل العمليات المالية" data-en="Account Statement & Transaction History">كشف الحساب وسجل العمليات المالية</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-1" data-ar="كافة الحركات المالية الموثقة الصادرة والواردة لمحفظتك مع إمكانية استعراض الإيصال الرسمي" data-en="All verified financial transactions in and out of your wallet with official receipt viewing">كافة الحركات المالية الموثقة الصادرة والواردة لمحفظتك مع إمكانية استعراض الإيصال الرسمي</p>
+          </div>
+
+          <!-- Transaction Filter Badges -->
+          <div class="flex items-center gap-1.5 p-1 bg-[#0b172e] rounded-xl border border-white/10 text-xs">
+            <button
+              type="button"
+              onclick="filterWalletTxs('all', this)"
+              class="tx-filter-btn px-3 py-1.5 rounded-lg font-bold bg-blue-600 text-white transition-all"
+              data-ar="الكل"
+              data-en="All"
+            >
+              الكل
+            </button>
+            <button
+              type="button"
+              onclick="filterWalletTxs('credit', this)"
+              class="tx-filter-btn px-3 py-1.5 rounded-lg font-bold text-slate-300 hover:text-white transition-all"
+              data-ar="عمليات الشحن (+)"
+              data-en="Top-ups (+)"
+            >
+              عمليات الشحن (+)
+            </button>
+            <button
+              type="button"
+              onclick="filterWalletTxs('debit', this)"
+              class="tx-filter-btn px-3 py-1.5 rounded-lg font-bold text-slate-300 hover:text-white transition-all"
+              data-ar="عمليات السحب (-)"
+              data-en="Withdrawals (-)"
+            >
+              عمليات السحب (-)
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic History List Container -->
+        <div id="wallet-history-list" class="space-y-2.5 min-h-[140px]">
+          <!-- Loaded dynamically via renderWalletHistory() in portal-api.js -->
+        </div>
+
+        <!-- Security Trust Bar -->
+        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i>
+            <span data-ar="عملياتك المالية موثقة ومحمية وفق أعلى معايير أمان التشفير 256-bit" data-en="Your financial operations are verified and protected by 256-bit encryption standards">عملياتك المالية موثقة ومحمية وفق أعلى معايير أمان التشفير 256-bit</span>
+          </div>
+          <div class="flex items-center gap-4 text-[11px] font-mono">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-sky-400"></i> SAMA Compliant</span>
+            <span>PCI-DSS Validated</span>
+            <span>Stripe Security</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- TRANSACTION RECEIPT MODAL (إيصال عملية مالية موثقة) -->
+    <!-- ============================================================ -->
+    <div
+      id="receipt-modal"
+      onclick="if (event.target.id === 'receipt-modal') hideReceiptModal();"
+      class="hidden fixed inset-0 modal-backdrop z-[110] flex items-center justify-center p-3 sm:p-6 overflow-y-auto no-scrollbar"
+    >
+      <div
+        onclick="event.stopPropagation()"
+        class="modal-card w-full max-w-md rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative my-auto p-6 sm:p-7 text-center space-y-4 bg-white text-slate-800"
+      >
+        <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border-2 border-emerald-200 flex items-center justify-center text-3xl mx-auto shadow-sm">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-black text-slate-900" data-ar="إيصال عملية مالية موثقة" data-en="Verified Financial Receipt">إيصال عملية مالية موثقة</h4>
+          <p class="text-xs text-slate-500 mt-0.5" data-ar="منصة مواصلات الذكية - نظام المدفوعات السحابي" data-en="Mowasalat Smart Platform - Cloud Payment System">منصة مواصلات الذكية - نظام المدفوعات السحابي</p>
+        </div>
+
+        <div class="py-2">
+          <span id="receipt-amount-display" class="text-3xl font-black font-mono text-emerald-600 block">+150.00 ر.س</span>
+        </div>
+
+        <div class="receipt-details-box p-4 rounded-2xl bg-slate-50 border border-slate-200 text-start space-y-2.5 text-xs">
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <span class="text-slate-500 font-medium" data-ar="عنوان العملية:" data-en="Transaction Title:">عنوان العملية:</span>
+            <span id="receipt-title-display" class="font-bold text-slate-900 max-w-[200px] truncate">شحن رصيد</span>
+          </div>
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <span class="text-slate-500 font-medium" data-ar="المرجع المالي:" data-en="Financial Ref:">المرجع المالي:</span>
+            <span id="receipt-ref-display" class="font-mono font-bold text-blue-600">#STRIPE-000000</span>
+          </div>
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <span class="text-slate-500 font-medium" data-ar="قناة الدفع / التحويل:" data-en="Payment / Channel:">قناة الدفع / التحويل:</span>
+            <span id="receipt-channel-display" class="font-bold text-slate-900">بوابة الدفع الإلكتروني</span>
+          </div>
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <span class="text-slate-500 font-medium" data-ar="تاريخ المعاملة:" data-en="Date:">تاريخ المعاملة:</span>
+            <span id="receipt-date-display" class="font-mono font-medium text-slate-600">2026/10/18</span>
+          </div>
+          <div class="flex justify-between items-center pt-1 font-bold">
+            <span class="text-slate-500 font-medium" data-ar="حالة العملية:" data-en="Status:">حالة العملية:</span>
+            <span class="text-emerald-600 flex items-center gap-1 font-bold"><i class="fa-solid fa-check text-[11px]"></i> <span data-ar="معتمدة وناجحة بنسبة 100%" data-en="100% Certified & Successful">معتمدة وناجحة بنسبة 100%</span></span>
+          </div>
+        </div>
+
+        <div class="flex gap-2 pt-1">
+          <button
+            type="button"
+            onclick="window.print()"
+            class="btn-receipt-print flex-1 py-3 rounded-xl font-bold bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 transition-all text-xs cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+          >
+            <i class="fa-solid fa-print"></i>
+            <span data-ar="طباعة الإيصال" data-en="Print Receipt">طباعة الإيصال</span>
+          </button>
+          <button
+            type="button"
+            onclick="hideReceiptModal()"
+            class="btn-receipt-close flex-1 py-3 rounded-xl font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition-all text-xs cursor-pointer shadow-sm"
+          >
+            <span data-ar="إغلاق" data-en="Close">إغلاق</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- AUTH MODAL (تسجيل الدخول / إنشاء حساب / التحقق عبر SMS) -->
+    <!-- ============================================================ -->
+    <div
+      id="auth-modal"
+      onclick="if (event.target.id === 'auth-modal') hideAuthModal();"
+      class="hidden fixed inset-0 modal-backdrop z-[100] flex items-center justify-center p-3 sm:p-6 overflow-y-auto no-scrollbar"
+    >
+      <div
+        onclick="event.stopPropagation()"
+        class="modal-card bg-white text-slate-800 w-full max-w-xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative my-auto animate-modal"
+      >
+        <!-- Close Button -->
+        <button
+          onclick="hideAuthModal()"
+          class="modal-close-btn absolute top-4 left-4 z-10"
+          title="إغلاق"
+        >
+          &times;
+        </button>
+
+        <!-- Modal Header -->
+        <div class="px-6 sm:px-8 pt-5 pb-2.5 text-center">
+          <div
+            class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200 mb-2 shadow-sm"
+          >
+            <i class="fa-solid fa-shield-halved text-xl"></i>
+          </div>
+          <h3
+            id="auth-modal-title"
+            class="text-xl sm:text-2xl font-black tracking-tight text-slate-900"
+            data-ar="منصة مواصلات الذكية"
+            data-en="Mowasalat Smart Portal"
+          >
+            منصة مواصلات الذكية
+          </h3>
+          <p
+            id="auth-modal-sub"
+            class="text-xs text-slate-500 mt-0.5"
+            data-ar="تسجيل الدخول وإدارة الاشتراكات والمحفظة"
+            data-en="Login & Manage Subscriptions & Wallet"
+          >
+            تسجيل الدخول وإدارة الاشتراكات والمحفظة
+          </p>
+
+          <!-- Navigation Tabs (Login vs Register) -->
+          <div
+            id="auth-tabs"
+            class="grid grid-cols-2 p-1 bg-slate-100 rounded-2xl border border-slate-200 mt-3 max-w-md mx-auto"
+          >
+            <button
+              type="button"
+              id="tab-btn-login"
+              onclick="switchAuthTab('login')"
+              class="active-tab py-2 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all bg-gradient-to-r from-blue-700 to-indigo-700 text-white shadow-lg"
+            >
+              <i class="fa-solid fa-arrow-right-to-bracket ml-1.5"></i>
+              <span data-ar="تسجيل الدخول" data-en="Sign In">تسجيل الدخول</span>
+            </button>
+            <button
+              type="button"
+              id="tab-btn-register"
+              onclick="switchAuthTab('register')"
+              class="py-2 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition-all"
+            >
+              <i class="fa-solid fa-user-plus ml-1.5"></i>
+              <span data-ar="إنشاء حساب جديد" data-en="Create Account"
+                >إنشاء حساب جديد</span
+              >
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab Content: LOGIN -->
+        <div id="auth-tab-login" class="px-6 sm:px-10 pb-6 pt-3">
+          <form
+            id="login-form"
+            class="space-y-4"
+            onsubmit="handleLoginSubmit(event)"
+          >
+            <div>
+              <label
+                class="portal-label block text-xs font-bold"
+                data-ar="رقم الجوال أو البريد الإلكتروني"
+                data-en="Mobile or Email"
+              >
+                رقم الجوال أو البريد الإلكتروني
+              </label>
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500"
+                >
+                  <i class="fa-solid fa-user text-xs"></i>
+                </span>
+                <input
+                  type="text"
+                  id="login-identifier"
+                  required
+                  placeholder="05xxxxxxxx أو بريدك الإلكتروني"
+                  dir="ltr"
+                  class="portal-input px-3.5 pr-10 py-3 w-full text-right text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="portal-label block text-xs font-bold"
+                data-ar="كلمة المرور"
+                data-en="Password"
+              >
+                كلمة المرور
+              </label>
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500"
+                >
+                  <i class="fa-solid fa-lock text-xs"></i>
+                </span>
+                <input
+                  type="password"
+                  id="login-password"
+                  required
+                  placeholder="••••••••"
+                  class="portal-input px-3.5 pr-10 py-3 w-full text-sm"
+                />
+              </div>
+            </div>
+
+            <div
+              id="login-alert"
+              class="hidden p-3 rounded-xl text-xs font-medium text-center"
+            ></div>
+
+            <button
+              type="submit"
+              id="btn-login-submit"
+              class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 text-white shadow-lg shadow-blue-900/30 transition-all hover:brightness-110 hover:scale-[1.01] flex items-center justify-center gap-2 text-sm mt-3"
+            >
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              <span data-ar="تسجيل الدخول" data-en="Sign In">تسجيل الدخول</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab Content: REGISTER -->
+        <div id="auth-tab-register" class="hidden px-6 sm:px-10 pb-6 pt-3">
+          <form
+            id="register-form"
+            class="space-y-4"
+            onsubmit="handleRegisterSubmit(event)"
+          >
+            <!-- Avatar Upload Row -->
+            <div class="avatar-upload-row flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-200 mb-1">
+              <div class="relative w-14 h-14 rounded-full overflow-hidden bg-blue-50 border-2 border-dashed border-blue-300 flex items-center justify-center shrink-0 group">
+                <img id="reg-avatar-preview" src="" class="w-full h-full object-cover hidden" alt="معاينة الصورة" />
+                <i id="reg-avatar-icon" class="fa-solid fa-camera text-blue-600 text-lg"></i>
+              </div>
+              <div class="flex-1 text-right">
+                <label for="reg-avatar-input" class="block text-xs font-bold text-slate-800 cursor-pointer hover:text-blue-600 transition-colors">
+                  <i class="fa-solid fa-cloud-arrow-up ml-1 text-blue-600"></i>
+                  <span data-ar="الصورة الشخصية (اختياري)" data-en="Profile Photo (Optional)">الصورة الشخصية (اختياري)</span>
+                </label>
+                <p class="text-[11px] text-slate-500 mt-0.5" data-ar="اختر صورة لتظهر بجانب اسمك في الموقع" data-en="Choose an avatar to show next to your name">اختر صورة لتظهر بجانب اسمك في الموقع</p>
+                <input
+                  type="file"
+                  id="reg-avatar-input"
+                  accept="image/png, image/jpeg, image/jpg, image/webp"
+                  onchange="handleAvatarPreview(this)"
+                  class="hidden"
+                />
+              </div>
+              <label for="reg-avatar-input" class="btn-browse px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 text-xs font-bold cursor-pointer transition-all">
+                <span data-ar="رفع صورة" data-en="Browse">رفع صورة</span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="portal-label block text-xs font-bold mb-1.5"
+                  data-ar="الاسم الكامل"
+                  data-en="Full Name"
+                >
+                  الاسم الكامل
+                </label>
+                <div class="relative">
+                  <span
+                    class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500 pointer-events-none"
+                  >
+                    <i class="fa-solid fa-user text-xs"></i>
+                  </span>
+                  <input
+                    type="text"
+                    id="reg-name"
+                    required
+                    placeholder="مثال: زياد عبدالله"
+                    class="portal-input px-3.5 pr-10 py-3 w-full text-right text-sm rounded-xl"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="portal-label block text-xs font-bold mb-1.5"
+                  data-ar="رقم الجوال"
+                  data-en="Mobile Number"
+                >
+                  رقم الجوال
+                </label>
+                <div class="relative">
+                  <span
+                    class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500 pointer-events-none"
+                  >
+                    <i class="fa-solid fa-mobile-screen text-xs"></i>
+                  </span>
+                  <input
+                    type="tel"
+                    id="reg-phone"
+                    required
+                    placeholder="05xxxxxxxx"
+                    dir="ltr"
+                    class="portal-input px-3.5 pr-10 py-3 w-full text-right text-sm rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="portal-label block text-xs font-bold mb-1.5"
+                  data-ar="نوع المستخدم"
+                  data-en="User Type"
+                >
+                  نوع المستخدم
+                </label>
+                <div class="relative">
+                  <span
+                    class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500 pointer-events-none"
+                  >
+                    <i class="fa-solid fa-id-badge text-xs"></i>
+                  </span>
+                  <select
+                    id="reg-role"
+                    class="portal-input pr-10 pl-9 py-3 w-full text-sm font-semibold rounded-xl text-right"
+                  >
+                    <option value="passenger">
+                      عميل / راكب أفراد
+                    </option>
+                    <option value="family">
+                      عائلة / اشتراك منزلي
+                    </option>
+                    <option value="student_employee">
+                      طالب / موظف حكومي
+                    </option>
+                    <option value="partner">
+                      شريك أعمال / مؤسسة
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="portal-label block text-xs font-bold mb-1.5"
+                  data-ar="البريد الإلكتروني"
+                  data-en="Email Address"
+                >
+                  البريد الإلكتروني
+                </label>
+                <div class="relative">
+                  <span
+                    class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500 pointer-events-none"
+                  >
+                    <i class="fa-solid fa-envelope text-xs"></i>
+                  </span>
+                  <input
+                    type="email"
+                    id="reg-email"
+                    required
+                    placeholder="user@domain.com"
+                    dir="ltr"
+                    class="portal-input px-3.5 pr-10 py-3 w-full text-right text-sm rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="portal-label block text-xs font-bold mb-1.5"
+                  data-ar="كلمة المرور"
+                  data-en="Password"
+                >
+                  كلمة المرور
+                </label>
+                <div class="relative">
+                  <span
+                    class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-blue-500 pointer-events-none"
+                  >
+                    <i class="fa-solid fa-lock text-xs"></i>
+                  </span>
+                  <input
+                    type="password"
+                    id="reg-password"
+                    required
+                    placeholder="6 أحرف أو أرقام على الأقل"
+                    class="portal-input px-3.5 pr-10 py-3 w-full text-right text-sm rounded-xl"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="portal-label block text-xs font-bold"
+                  data-ar="تأكيد كلمة المرور"
+                  data-en="Confirm Password"
+                >
+                  تأكيد كلمة المرور
+                </label>
+                <input
+                  type="password"
+                  id="reg-password-confirm"
+                  required
+                  placeholder="••••••••"
+                  class="portal-input px-3.5 py-3 w-full text-sm"
+                />
+              </div>
+            </div>
+
+            <div
+              id="reg-alert"
+              class="hidden p-3 rounded-xl text-xs font-medium text-center"
+            ></div>
+
+            <button
+              type="submit"
+              id="btn-register-submit"
+              class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 text-white shadow-lg shadow-blue-900/30 transition-all hover:brightness-110 hover:scale-[1.01] flex items-center justify-center gap-2 text-sm mt-3"
+            >
+              <i class="fa-solid fa-user-check"></i>
+              <span data-ar="إنشاء الحساب والمتابعة" data-en="Create Account"
+                >إنشاء الحساب والمتابعة</span
+              >
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab Content: OTP SMS VERIFICATION -->
+        <div id="auth-tab-otp" class="hidden px-6 sm:px-8 pb-6 pt-2 text-center">
+          <div class="mb-3">
+            <div
+              class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-2xl mx-auto mb-2 shadow"
+            >
+              <i class="fa-solid fa-comment-sms"></i>
+            </div>
+            <h4
+              class="text-lg font-black text-white"
+              data-ar="تأكيد رقم الجوال برمز SMS"
+              data-en="Confirm Mobile via SMS"
+            >
+              تأكيد رقم الجوال برمز SMS
+            </h4>
+            <p class="text-xs text-gray-200 mt-0.5">
+              <span
+                data-ar="تم إرسال كود التحقق السري إلى الرقم:"
+                data-en="Verification code sent to:"
+                >تم إرسال كود التحقق السري إلى الرقم:</span
+              >
+              <span
+                id="otp-phone-badge"
+                class="font-bold text-amber-300 mx-1"
+                dir="ltr"
+                >05XXXXXXXX</span
+              >
+            </p>
+          </div>
+
+          <form
+            id="otp-form"
+            onsubmit="handleOtpSubmit(event)"
+            class="space-y-4"
+          >
+            <div class="flex justify-center items-center gap-3" dir="ltr">
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-box w-11 h-12 rounded-xl bg-[#132442] border-2 border-amber-400/60 text-center text-xl font-black text-amber-300 focus:outline-none focus:border-amber-400 transition-all shadow-inner"
+                data-index="0"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-box w-11 h-12 rounded-xl bg-[#132442] border-2 border-amber-400/60 text-center text-xl font-black text-amber-300 focus:outline-none focus:border-amber-400 transition-all shadow-inner"
+                data-index="1"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-box w-11 h-12 rounded-xl bg-[#132442] border-2 border-amber-400/60 text-center text-xl font-black text-amber-300 focus:outline-none focus:border-amber-400 transition-all shadow-inner"
+                data-index="2"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-box w-11 h-12 rounded-xl bg-[#132442] border-2 border-amber-400/60 text-center text-xl font-black text-amber-300 focus:outline-none focus:border-amber-400 transition-all shadow-inner"
+                data-index="3"
+              />
+            </div>
+
+            <div
+              id="otp-alert"
+              class="hidden p-2 rounded-xl text-xs font-medium text-center"
+            ></div>
+
+            <button
+              type="submit"
+              id="btn-otp-submit"
+              class="w-full py-3 rounded-xl font-bold bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 shadow-lg shadow-amber-900/40 transition-all hover:brightness-110 hover:scale-[1.01] flex items-center justify-center gap-2 text-sm"
+            >
+              <i class="fa-solid fa-circle-check"></i>
+              <span
+                data-ar="تأكيد وتفعيل الحساب"
+                data-en="Verify & Activate"
+                >تأكيد وتفعيل الحساب</span
+              >
+            </button>
+          </form>
+
+          <div
+            class="mt-3 flex items-center justify-between text-xs text-gray-400"
+          >
+            <button
+              type="button"
+              onclick="resendSmsOtp()"
+              class="text-amber-400 hover:text-amber-300 font-bold transition-all"
+            >
+              <i class="fa-solid fa-rotate-right ml-1"></i>
+              <span data-ar="إعادة إرسال الرمز" data-en="Resend Code"
+                >إعادة إرسال الرمز</span
+              >
+              <span id="otp-countdown" class="mr-1 text-slate-400"></span>
+            </button>
+            <button
+              type="button"
+              onclick="switchAuthTab('login')"
+              class="text-blue-300 hover:text-white"
+            >
+              <span data-ar="العودة" data-en="Back">العودة</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Finished -->
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================================ -->
+    <footer class="footer-gradient bg-slate-50 border-t border-slate-200 mt-16 text-slate-700">
+      <div class="max-w-screen-xl mx-auto px-6 lg:px-10 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Col 1: About -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="images/new-logo.jpeg"
+                alt="Mowasalat"
+                class="rounded-xl shadow-sm border border-slate-200"
+                style="height: 48px; width: auto"
+              />
+              <span class="text-xl font-black text-slate-900" data-ar="مـواصـلات" data-en="Mowasalat">مـواصـلات</span>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4" data-ar="المنصة السعودية الذكية لحلول النقل والمشاوير الشهرية. خيارات دفع إلكترونية متطورة ومحفظة رقمية آمنة." data-en="The Saudi smart platform for mobility solutions & monthly ride subscriptions. Advanced electronic payment options and secure digital wallet.">
+              المنصة السعودية الذكية لحلول النقل والمشاوير الشهرية. خيارات دفع إلكترونية متطورة ومحفظة رقمية آمنة.
+            </p>
+            <div class="flex items-center gap-2 text-xs text-emerald-600 font-bold">
+              <i class="fa-solid fa-shield-check"></i>
+              <span data-ar="مرخص ومعتمد بالمملكة العربية السعودية" data-en="Licensed & Certified in Saudi Arabia">مرخص ومعتمد بالمملكة العربية السعودية</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+            <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
+              <li><a href="index.html#home" class="hover:text-blue-600 transition-colors" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+              <li><a href="index.html#subscriptions" class="hover:text-blue-600 transition-colors" data-ar="باقات المشاوير الشهرية" data-en="Monthly Ride Plans">باقات المشاوير الشهرية</a></li>
+              <li><a href="index.html#special-offers" class="hover:text-blue-600 transition-colors" data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</a></li>
+              <li><a href="wallet.html" class="hover:text-blue-700 text-blue-600 font-bold transition-colors" data-ar="المحفظة الرقمية الذكية" data-en="Smart Digital Wallet">المحفظة الرقمية الذكية</a></li>
+              <li><a href="team.html" class="hover:text-blue-600 transition-colors" data-ar="فريق العمل" data-en="Our Team">فريق العمل</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Payment & Compliance -->
+          <div>
+            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4" data-ar="الدفع الإلكتروني والأمان" data-en="Electronic Payment & Security">الدفع الإلكتروني والأمان</h4>
+            <ul class="space-y-2.5 text-xs text-slate-600">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> <span data-ar="مدى Mada Debit" data-en="Mada Debit Card">مدى Mada Debit</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> <span data-ar="Apple Pay المعتمد" data-en="Certified Apple Pay">Apple Pay المعتمد</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> <span data-ar="نظام سريع للتحويل الفوري (SARIE)" data-en="SARIE Instant Transfer System">نظام سريع للتحويل الفوري (SARIE)</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> <span data-ar="محفظة STC Pay السريعة" data-en="STC Pay Fast Wallet">محفظة STC Pay السريعة</span></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact -->
+          <div>
+            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4" data-ar="الدعم الفني والاتصال" data-en="Support & Contact">الدعم الفني والاتصال</h4>
+            <ul class="space-y-3 text-xs text-slate-600">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-location-dot text-blue-600"></i>
+                <span data-ar="الرياض، المملكة العربية السعودية" data-en="Riyadh, Saudi Arabia">الرياض، المملكة العربية السعودية</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-phone text-blue-600"></i>
+                <span dir="ltr">0501716663</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-regular fa-envelope text-blue-600"></i>
+                <span>info@muasalat.net</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-regular fa-clock text-blue-600"></i>
+                <span data-ar="خدمة العملاء والدعم على مدار الساعة 24/7" data-en="Customer Service & Support 24/7">خدمة العملاء والدعم على مدار الساعة 24/7</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p data-ar="© 2026 مواصلات Mowasalat. جميع الحقوق محفوظة." data-en="© 2026 Mowasalat. All Rights Reserved.">© 2026 مواصلات Mowasalat. جميع الحقوق محفوظة.</p>
+          <div class="flex items-center gap-4">
+            <a href="index.html#privacy" class="hover:text-blue-600 transition-colors" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+            <span>•</span>
+            <a href="index.html#privacy" class="hover:text-blue-600 transition-colors" data-ar="الشروط والأحكام" data-en="Terms & Conditions">الشروط والأحكام</a>
+            <span>•</span>
+            <span class="text-emerald-600 font-bold" data-ar="صنع بفخر في المملكة العربية السعودية 🇸🇦" data-en="Proudly Made in Saudi Arabia 🇸🇦">صنع بفخر في المملكة العربية السعودية 🇸🇦</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- SCRIPTS -->
+    <!-- ============================================================ -->
+    <script src="script.js"></script>
+    <script src="portal-api.js"></script>
+
+    <script>
+      // Standalone Wallet Page Bootstrap & URL Navigation Controller
+      document.addEventListener('DOMContentLoaded', function () {
+        if (typeof WalletService !== 'undefined') {
+          WalletService.syncUI();
+          if (typeof renderWalletHistory === 'function') {
+            renderWalletHistory();
+          }
+        }
+
+        // Update cardholder name if user is logged in
+        try {
+          const raw = localStorage.getItem('mowasalat_user');
+          if (raw) {
+            const user = JSON.parse(raw);
+            const nameEl = document.getElementById('wallet-card-user-name');
+            if (nameEl && user && user.name) {
+              nameEl.textContent = user.name;
+            }
+          }
+        } catch (e) {}
+
+        // Handle URL parameters (e.g. ?tab=withdraw, ?tab=topup, ?tab=history)
+        try {
+          const urlParams = new URLSearchParams(window.location.search);
+          const tab = urlParams.get('tab') || urlParams.get('action');
+          if (tab === 'withdraw') {
+            const target = document.getElementById('wallet-withdraw-amount') || document.getElementById('withdraw-step-1');
+            if (target) {
+              setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                try { target.focus(); } catch (err) {}
+              }, 250);
+            }
+          } else if (tab === 'topup') {
+            const target = document.getElementById('wallet-topup-amount') || document.getElementById('btn-wallet-topup-submit');
+            if (target) {
+              setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                try { target.focus(); } catch (err) {}
+              }, 250);
+            }
+          } else if (tab === 'history' || tab === 'statement') {
+            const target = document.getElementById('wallet-history-list');
+            if (target) {
+              setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }, 250);
+            }
+          }
+        } catch (e) {}
+      });
+    </script>
+  </body>
+</html>

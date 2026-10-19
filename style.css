@@ -271,12 +271,171 @@
         }
 
         body.light-theme .modal-backdrop {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(15, 23, 42, 0.6) !important;
+            backdrop-filter: blur(4px) !important;
+            -webkit-backdrop-filter: blur(4px) !important;
         }
 
-        body.light-theme #register-modal .bg-\[\#0a1a3a\] {
-            background: #ffffff;
-            border-color: rgba(0, 0, 0, 0.06);
+        body.light-theme #register-modal .modal-card,
+        body.light-theme #auth-modal .modal-card,
+        body.light-theme #checkout-modal .modal-card,
+        body.light-theme .modal-card {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            opacity: 1 !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            color: #0f172a !important;
+            border: 1px solid #e2e8f0 !important;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        body.light-theme #auth-modal h3,
+        body.light-theme #auth-modal #auth-modal-title,
+        body.light-theme #auth-modal h4,
+        body.light-theme #checkout-modal h3,
+        body.light-theme #checkout-modal h4 {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #auth-modal p,
+        body.light-theme #auth-modal #auth-modal-sub,
+        body.light-theme #checkout-modal p {
+            color: #475569 !important;
+        }
+
+        body.light-theme #auth-modal .portal-label,
+        body.light-theme #checkout-modal .portal-label {
+            color: #1e293b !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.45rem !important;
+            display: inline-block !important;
+            font-size: 0.775rem !important;
+        }
+
+        body.light-theme #auth-modal .portal-input,
+        body.light-theme #checkout-modal .portal-input {
+            background-color: #f8fafc !important;
+            background: #f8fafc !important;
+            border: 1.5px solid #cbd5e1 !important;
+            color: #0f172a !important;
+            border-radius: 0.875rem !important;
+            transition: all 0.2s ease !important;
+        }
+
+        body.light-theme #auth-modal select.portal-input,
+        body.light-theme #checkout-modal select.portal-input {
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%233b82f6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+            background-repeat: no-repeat !important;
+            background-position: left 0.85rem center !important;
+            background-size: 1.15rem 1.15rem !important;
+            padding-left: 2.5rem !important;
+            padding-right: 1rem !important;
+            cursor: pointer !important;
+        }
+
+        html[dir="ltr"] body.light-theme #auth-modal select.portal-input,
+        html[dir="ltr"] body.light-theme #checkout-modal select.portal-input {
+            background-position: right 0.85rem center !important;
+            padding-right: 2.5rem !important;
+            padding-left: 1rem !important;
+        }
+
+        body.light-theme #auth-modal .portal-input::placeholder,
+        body.light-theme #checkout-modal .portal-input::placeholder {
+            color: #94a3b8 !important;
+        }
+
+        body.light-theme #auth-modal .portal-input:focus,
+        body.light-theme #checkout-modal .portal-input:focus {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12) !important;
+        }
+
+        body.light-theme #auth-modal #auth-tabs {
+            background: #f1f5f9 !important;
+            border: 1px solid #e2e8f0 !important;
+        }
+
+        body.light-theme #auth-modal #auth-tabs button {
+            color: #475569 !important;
+        }
+
+        body.light-theme #auth-modal #auth-tabs button * {
+            color: inherit !important;
+        }
+
+        body.light-theme #auth-modal #auth-tabs button.active-tab,
+        body.light-theme #auth-modal #auth-tabs button[class*="from-blue-700"] {
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #1d4ed8, #4338ca) !important;
+            box-shadow: 0 4px 14px 0 rgba(29, 78, 216, 0.39) !important;
+        }
+
+        body.light-theme #auth-modal #auth-tabs button.active-tab *,
+        body.light-theme #auth-modal #auth-tabs button[class*="from-blue-700"] * {
+            color: #ffffff !important;
+        }
+
+        body.light-theme #auth-modal #auth-tabs button:not(.active-tab):not([class*="from-blue-700"]):hover {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #auth-modal .otp-box {
+            background: #f8fafc !important;
+            border-color: #f59e0b !important;
+            color: #b45309 !important;
+        }
+
+        body.light-theme #auth-modal .modal-close-btn,
+        body.light-theme #checkout-modal .modal-close-btn {
+            color: #64748b !important;
+        }
+
+        body.light-theme #auth-modal .modal-close-btn:hover,
+        body.light-theme #checkout-modal .modal-close-btn:hover {
+            color: #0f172a !important;
+        }
+
+        body.light-theme #auth-modal .avatar-upload-row {
+            background: #f8fafc !important;
+            border-color: #e2e8f0 !important;
+        }
+
+        body.light-theme #auth-modal .avatar-upload-row label {
+            color: #1e293b !important;
+        }
+
+        body.light-theme #auth-modal .avatar-upload-row p {
+            color: #64748b !important;
+        }
+
+        body.light-theme #auth-modal .avatar-upload-row .btn-browse {
+            background: #eff6ff !important;
+            border-color: #bfdbfe !important;
+            color: #2563eb !important;
+        }
+
+        body.light-theme .portal-subcard,
+        body.light-theme #checkout-modal .portal-subcard {
+            background: #f8fafc !important;
+            border-color: #e2e8f0 !important;
+            color: #0f172a !important;
+        }
+
+        #user-dropdown-menu {
+            left: 0 !important;
+            right: auto !important;
+        }
+
+        html[dir="ltr"] #user-dropdown-menu {
+            right: 0 !important;
+            left: auto !important;
         }
 
         body.light-theme #register-modal .bg-black\/30 {
